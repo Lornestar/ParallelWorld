@@ -61,6 +61,8 @@ contract ParallelWorld {
   uint256 private increaseLimit3 = 2.0 ether;
   uint256 private increaseLimit4 = 5.0 ether;
 
+  uint256 public enddate = 1527552000;
+
   uint256[] private listedItems;
   mapping (uint256 => address) private ownerOfItem;
   mapping (uint256 => uint256) private startingPriceOfItem;
@@ -244,7 +246,7 @@ contract ParallelWorld {
     require(ownerOf(_itemId) != msg.sender);
     require(!isContract(msg.sender));
     require(msg.sender != address(0));
-    require(now < 1527552000); //team buying can only happen before April 2nd 00:00:00 UTC time
+    require(now < enddate); //team buying can only happen before April 2nd 00:00:00 UTC time
 
     address oldOwner = ownerOf(_itemId);
     address newOwner = msg.sender;
@@ -402,6 +404,10 @@ contract ParallelWorld {
 
   function allOf (uint256 _itemId) external view returns (uint256 _itemIdreturn, address _owner, uint256 _startingPrice, uint256 _price, uint256 _nextPrice, bytes32 _name) {
     return (_itemId, ownerOf(_itemId), startingPriceOf(_itemId), priceOf(_itemId), nextPriceOf(_itemId), nameOf(_itemId));
+  }
+
+  function getenddate () public view returns (uint256 _enddate) {
+    return enddate;
   }
 
   function getlistedItems() external view returns(uint256[] _listedItems){

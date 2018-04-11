@@ -26,13 +26,13 @@ namespace ParallelWorldAPI.APIs
         static string strFrom = "noreply@ParallelSports.com";
         static string strFromName = "noreply";
 
-        public static void SimpleEmail(string strTo, string strToEmail, string templateid, Hashtable hstemp, string subject)
+        public async Task SimpleEmail(string strTo, string strToEmail, string templateid, Hashtable hstemp, string subject)
         {
             try
             {
                 // From
 
-
+                /*
                 var myMessage = new SendGridMessage()
                 {
                     From = new EmailAddress(strFrom, strFromName),
@@ -40,12 +40,6 @@ namespace ParallelWorldAPI.APIs
                     PlainTextContent = " ",
                     HtmlContent = " "
                 };
-                /*myMessage.AddTo(strToEmail);
-                myMessage.From = new MailAddress(strFrom, strFromName);
-                myMessage.Subject = subject;
-                myMessage.Text = " ";
-                myMessage.Html = " ";*/
-
 
                 foreach (DictionaryEntry entry in hstemp)
                 {
@@ -108,8 +102,34 @@ namespace ParallelWorldAPI.APIs
 
                 // Send the email.
                 transportWeb.Deliver(myMessage);*/
-                var client = new SendGridClient("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");
-                var response = client.SendEmailAsync(myMessage);
+
+                if (strToEmail.Length > 0)
+                {
+                    var msg = new SendGridMessage();
+                    msg.SetFrom(new EmailAddress("noreply@parallelworldsport.com", "Parallel World Sports"));
+                    msg.SetSubject(subject);
+                    msg.AddTo(new EmailAddress(strToEmail, strTo));
+                    //msg.AddContent(MimeType.Text, "I'm replacing the <strong>body tag</strong>");
+                    msg.SetTemplateId(templateid);
+
+                    foreach (DictionaryEntry entry in hstemp)
+                    {
+                        //List<string> templist = new List<string>();
+                        //templist.Add(entry.Value.ToString());
+                        msg.AddSubstitution(entry.Key.ToString(), entry.Value.ToString());
+                    }
+
+                    var client = new SendGridClient("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");
+                    var response = await client.SendEmailAsync(msg);
+
+                    Console.WriteLine(response.StatusCode);
+                    Console.WriteLine(response.Headers.ToString());
+                    Console.WriteLine("\n\nPress any key to exit.");
+                    Console.ReadLine();
+                }
+
+
+
             }
             catch (Exception ex)
             {
@@ -145,6 +165,53 @@ namespace ParallelWorldAPI.APIs
 
             return strtemplate;
 
+        }
+
+        public void Send_Welcome(Models.Account currentaccount)
+        {
+            Hashtable hstemp = new Hashtable();
+            if (currentaccount.nickname.Length > 0)
+            {
+                hstemp.Add("NICKNAME", currentaccount.nickname);
+            }
+            else{
+                hstemp.Add("NICKNAME", currentaccount.ethaddress);
+            }
+
+
+            SimpleEmail("", currentaccount.email, "e37d5406-a615-4dbd-b351-76676fd0945a", hstemp, "Welcome to ParallelWorld");
+
+        }
+
+
+        public void Send_Transaction_Old_Owner(Models.Account currentaccount, Models.Transaction currenttx)
+        {
+            Hashtable hstemp = new Hashtable();
+            if (currentaccount.nickname.Length > 0)
+            {
+                hstemp.Add("NICKNAME", currentaccount.nickname);
+            }
+            else
+            {
+                hstemp.Add("NICKNAME", currentaccount.ethaddress);
+            }
+
+            SimpleEmail("", currentaccount.email, "3c7917a3-be51-40c9-a1b9-47dbb876473e", hstemp, "ParallelWorld team purchased");
+        }
+
+        public void Send_Transaction_New_Owner(Models.Account currentaccount, Models.Transaction currenttx)
+        {
+            Hashtable hstemp = new Hashtable();
+            if (currentaccount.nickname.Length > 0)
+            {
+                hstemp.Add("NICKNAME", currentaccount.nickname);
+            }
+            else
+            {
+                hstemp.Add("NICKNAME", currentaccount.ethaddress);
+            }
+
+            SimpleEmail("", currentaccount.email, "6198ab93-5cbf-46ee-9ab2-8f6ff7f4e7bd", hstemp, "ParallelWorld team purchased");
         }
 
     }

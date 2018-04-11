@@ -7,12 +7,15 @@ using System.IO;
 using System.Text;
 using Newtonsoft.Json;
 using System.Collections;
+using System.Data;
+using Newtonsoft.Json.Linq;
 
-namespace Bitcoin_Notify.APIs
+namespace ParallelWorldAPI.APIs
 {
     public class Firebase
     {
         char chr34 = Convert.ToChar(34);
+        string baseendpoint = "https://lornestar.firebaseio.com/parallelworld/";
 
         /*public void UpdateMarket(Hashtable hstemp)
         {
@@ -70,6 +73,83 @@ namespace Bitcoin_Notify.APIs
 
         }*/
 
+        public JArray Gettournamentevents(int tournamentid)
+        {
+            DataTable dttemp = new DataTable();
+
+            string strresponse = Web_Request(baseendpoint + tournamentid.ToString() + "/events/.json", null, 0);
+
+            if (strresponse == "null")
+            {
+                Hashtable hstemp2 = new Hashtable();
+                hstemp2.Add("description", "This is the first event");
+                Hashtable hstemp = new Hashtable();
+                hstemp.Add(0, hstemp2);
+                Web_Request(baseendpoint + tournamentid.ToString() + "/events/.json", hstemp, 1);
+                strresponse = Web_Request(baseendpoint + tournamentid.ToString() + "/events/.json", null, 0);
+            }
+
+            JArray ja = JArray.Parse(strresponse);
+
+            return ja;
+        }
+
+        public void AddTransaction(int tournamentid, string oldowner, string newowner, int itemid, decimal price, string txhash)
+        {
+            string description = newowner + " just bought a team from you.";
+
+            Hashtable hstemp2 = new Hashtable();
+            hstemp2.Add("itemid", itemid);
+            hstemp2.Add("newowner", newowner);
+            hstemp2.Add("oldowner", oldowner);
+            hstemp2.Add("description", description);
+            hstemp2.Add("price", price);
+            hstemp2.Add("txhash", txhash);
+
+            string strresponse = Web_Request(baseendpoint + tournamentid.ToString() + "/events/.json", null, 0);
+            JArray ja = JArray.Parse(strresponse);
+
+            Hashtable hstemp = new Hashtable();
+            hstemp.Add(ja.Count, hstemp2);
+
+            Web_Request(baseendpoint + tournamentid.ToString() + "/events/.json", hstemp, 1);
+        }
+
+        public Models.Account GetAccount(string ethaddress)
+        {
+            Models.Account currentaccount = new Models.Account();
+            currentaccount.ethaddress = ethaddress;
+
+            string strresponse = Web_Request(baseendpoint + "/accounts/" + ethaddress + "/.json", null, 0);
+
+            if (strresponse != "null")
+            {
+                JObject o = JObject.Parse(strresponse);
+                if (o["email"]!= null)
+                {
+                    currentaccount.email = (string)o["email"];
+                    currentaccount.nickname = (string)o["nickname"];
+                }
+
+            }
+
+
+            return currentaccount;
+        }
+
+        public void UpdateAccount(string ethaddress, string nickname, string email)
+        {
+            Hashtable hstemp2 = new Hashtable();
+            hstemp2.Add("email", email);
+            hstemp2.Add("nickname", nickname);
+            hstemp2.Add("ethaddress", ethaddress);
+            Hashtable hstemp = new Hashtable();
+            hstemp.Add(ethaddress, hstemp2);
+
+            Web_Request(baseendpoint + "/accounts/.json", hstemp, 1);
+        }
+
+
         public void ClearAllData()
         {
             string strurl = "https://lornestar.firebaseio.com/arbitrage/.json";
@@ -104,11 +184,15 @@ namespace Bitcoin_Notify.APIs
                 jsontxt = JsonConvert.SerializeObject(hstemp);
             }
 
-            // Write the request string to the request object
-            StreamWriter writer = new StreamWriter(webRequest.GetRequestStream());
+            if (method > 0)
+            {
+                // Write the request string to the request object
+                StreamWriter writer = new StreamWriter(webRequest.GetRequestStream());
 
-            writer.Write(jsontxt);
-            writer.Close();
+                writer.Write(jsontxt);
+                writer.Close();
+
+            }
 
             string responseString = "";
             try

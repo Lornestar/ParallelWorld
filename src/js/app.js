@@ -1,5 +1,6 @@
 var usersteams = [];
 var tournamentid = 0;
+var apibaseurl = "http://localhost:5000/api/"
 
 App = {
   web3Provider: null,
@@ -96,6 +97,12 @@ App = {
     
       // Set the provider for our contract
       App.contracts.ParallelWorld.setProvider(App.web3Provider);
+
+      if (document.getElementById("currentethaddress"))
+      {
+        document.getElementById("currentethaddress").innerHTML = web3.eth.accounts[0];
+        getaccountinfo(web3.eth.accounts[0]);
+      }      
     
       // Use our contract to retrieve and mark the adopted pets
       return App.handleiteminfo();
@@ -109,35 +116,6 @@ App = {
     $(document).on('click', '.btn-buyteam', App.handlebuy);    
   },
 
-  handlesetuserinfo: function(event) {
-    
-    var parallelworldInstance;
-
-    web3.eth.getAccounts(function(error, accounts) {
-      if (error) {
-        console.log(error);
-      }
-
-      var account = accounts[0];
-
-      App.contracts.ParallelWorld.deployed().then(function(instance) {
-        parallelworldInstance = instance;
-
-        var nickname = document.getElementById("nickname").value;
-        var email = document.getElementById("email").value;
-
-        // Execute buy as a transaction by sending account
-        return parallelworldInstance.setownerInfo(account, nickname,email,"", {value:0, from: account, gas: 21e4}).then(function(){
-            App.handleuserinfo();
-        });        
-      }).then(function(result) {
-        return App.handleiteminfo();
-      }).catch(function(err) {
-        console.log(err.message);
-      });
-    });
-  },
-
   handleuserinfo: function(){
     
     var parallelworldInstance;
@@ -149,23 +127,7 @@ App = {
 
       var account = accounts[0];
 
-      App.contracts.ParallelWorld.deployed().then(function(instance) {
-        parallelworldInstance = instance;
-
-        parallelworldInstance.getownerInfo.call(account).then(function(result){
-            var nickname = web3.toAscii(result[0]);
-            var email = web3.toAscii(result[1]);
-
-            if (document.getElementById('nickname'))
-            {
-              document.getElementById('nickname').value = nickname;
-            }
-            if (document.getElementById('email'))
-            {
-              document.getElementById('email').value = email;
-            }
-        });
-      });
+      
     });
   },
 
@@ -277,17 +239,19 @@ App = {
           price = parseethamount(price);
           var oldowner = response.args._oldowner;
           var newowner = response.args._newowner;
+          var txhash = response.transactionHash;
           console.log("Itemid = " + itemid + " / Price = " + price);
         
           //Call parallelworld API to inform a tx has occured
-          var apidata = {'itemid':itemid,'tournamentid':tournamentid,'pricepaid':price,'oldowner':oldowner,'newowner':newowner};
-          var apiurl = ""
+          var apidata = {'itemid':itemid,'tournamentid':tournamentid,'pricepaid':price,'oldowner':oldowner,'newowner':newowner,'txhash':txhash};
+          var apiurl = apibaseurl + "transaction"
           $.ajax({
             type: "POST",
-            url: url,
-            data: apidata,
-            success: success,
-            dataType: dataType
+            url: apiurl,
+            data: JSON.stringify(apidata),
+            success: function(){},
+            dataType: "json",
+            contentType:  "application/json"
           });
 
         });
@@ -377,3 +341,49 @@ function parseethamount(amount)
   currentamount = currentamount * 0.000000000000000001;
   return currentamount;
 }
+
+function getaccountinfo(ethaddress)
+{
+  //Call parallelworld API to inform a tx has occured
+  var apidata;
+  var apiurl = apibaseurl + "account/" + ethaddress
+  $.ajax({
+    type: "GET",
+    url: apiurl,
+    data: apidata,
+    dataType :"json",
+    success : function(data){
+        var nickname = data.nickname;
+        var email = data.email;
+        if (document.getElementById('nickname'))
+        {
+          document.getElementById('nickname').value = nickname;
+        }
+        if (document.getElementById('email'))
+        {
+           document.getElementById('email').value = email;
+        }
+
+      }
+  });
+}
+
+function updateaccountinfo()
+{
+  //Call parallelworld API to inform a tx has occured
+  var ethaddress =  document.getElementById("currentethaddress").innerHTML;
+  var nickname = document.getElementById("nickname").value;
+  var email = document.getElementById("email").value;
+
+  var apidata = {"ethaddress":ethaddress,"email":email,"nickname":nickname};
+  var apiurl = apibaseurl + "account"
+  $.ajax({
+    type: "POST",
+    url: apiurl,
+    data: JSON.stringify(apidata),
+    success: function(){},
+    dataType: "json",
+    contentType:  "application/json"
+  });
+}
+

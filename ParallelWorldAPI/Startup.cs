@@ -13,6 +13,13 @@ namespace ParallelWorldAPI
 {
     public class Startup
     {
+        public static List<string> _txapicalls;
+        public static List<string> txapicalls
+        {
+            get { return _txapicalls; }
+            private set { }
+        }
+
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -24,6 +31,9 @@ namespace ParallelWorldAPI
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+            services.AddCors();
+
+            _txapicalls = new List<string>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -34,7 +44,12 @@ namespace ParallelWorldAPI
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseCors(
+                options => options.WithOrigins("http://localhost:3002").AllowAnyMethod()
+            );
+
             app.UseMvc();
+
         }
     }
 }
