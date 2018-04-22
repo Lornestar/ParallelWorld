@@ -1,274 +1,260 @@
 [
   {
     "id": 0,
-    "name": "",
-    "picture": "images/UMBC.png",
+    "name": "Russia",
+    "picture": "images/worldcup/russia.png",
     "age": 0,
-    "odds": "10:1",
+    "odds": "30:1",
     "location": "",
-    "status":false
+    "status":true
   },
   {
     "id": 1,
     "name": "",
-    "picture": "images/kansasst.jpeg",
+    "picture": "images/worldcup/saudi-arabia.png",
     "age": 0,
-    "odds": "10:1",
+    "odds": "1000:1",
     "location": ""    
   },
   {
     "id": 2,
     "name": "",
-    "picture": "images/kentucky.png",
+    "picture": "images/worldcup/egypt.png",
     "age": 0,
-    "odds": "10:1",
+    "odds": "150:1",
     "location": ""
   },
   {
     "id": 3,
     "name": "",
-    "picture": "images/buffalo.jpeg",
+    "picture": "images/worldcup/uruguay.png",
     "age": 0,
-    "odds": "10:1",
-    "location": "",
-    "status":false
+    "odds": "25:1",
+    "location": ""
   },
   {
     "id": 4,
     "name": "",
-    "picture": "images/loyolachicago.jpg",
+    "picture": "images/worldcup/portugal.png",
     "age": 0,
-    "odds": "10:1",
+    "odds": "20:1",
     "location": ""
   },
   {
     "id": 5,
     "name": "",
-    "picture": "images/tennessee.jpg",
+    "picture": "images/worldcup/spain.png",
     "age": 0,
-    "breed": "",
-    "location": "",
-    "status":false
+    "odds": "7:1",
+    "location": ""
   },
   {
     "id": 6,
     "name": "",
-    "picture": "images/nevada.png",
+    "picture": "images/worldcup/morocco.png",
     "age": 0,
-    "breed": "",
+    "odds": "250:1",
     "location": ""
   },
   {
     "id": 7,
     "name": "",
-    "picture": "images/cincinnati.jpeg",
+    "picture": "images/worldcup/iran.png",
     "age": 0,
-    "breed": "",
-    "location": "",
-    "status":false
+    "odds": "250:1",
+    "location": ""
   },
   {
     "id": 8,
     "name": "",
-    "picture": "images/xavier.png",
+    "picture": "images/worldcup/france.png",
     "age": 0,
-    "breed": "",
-    "location": "",
-    "status":false
+    "odds": "5.5:1",
+    "location": ""
   },
   {
     "id": 9,
     "name": "",
-    "picture": "images/floridastate.jpg",
+    "picture": "images/worldcup/australia.png",
     "age": 0,
-    "breed": "",
+    "odds": "250:1",
     "location": ""
   },
   {
     "id": 10,
     "name": "",
-    "picture": "images/ohiostate.png",
+    "picture": "images/worldcup/peru.png",
     "age": 0,
-    "breed": "",
-    "location": "",
-    "status":false
+    "odds": "200:1",
+    "location": ""
   },
   {
     "id": 11,
     "name": "",
-    "picture": "images/gonzaga.png",
+    "picture": "images/worldcup/denmark.png",
     "age": 0,
-    "breed": "",
+    "odds": "80:1",
     "location": ""
   },
   {
     "id": 12,
     "name": "",
-    "picture": "images/houston.png",
+    "picture": "images/worldcup/argentina.png",
     "age": 0,
-    "breed": "",
-    "location": "",
-    "status":false
+    "odds": "8:1",
+    "location": ""
   },
   {
     "id": 13,
     "name": "",
-    "picture": "images/michigan.jpg",
+    "picture": "images/worldcup/iceland.png",
     "age": 0,
-    "breed": "",
+    "odds": "200:1",
     "location": ""
   },
   {
     "id": 14,
     "name": "",
-    "picture": "images/texasam.png",
+    "picture": "images/worldcup/croatia.png",
     "age": 0,
-    "breed": "",
+    "odds": "30:1",
     "location": ""
   },
   {
     "id": 15,
     "name": "",
-    "picture": "images/northcarolina.png",
+    "picture": "images/worldcup/nigeria.png",
     "age": 0,
-    "breed": "",
-    "location": "",
-    "status":false
+    "odds": "200:1",
+    "location": ""
   },
   {
     "id": 16,
     "name": "",
-    "picture": "images/villanova.png",
+    "picture": "images/worldcup/brazil.png",
     "age": 0,
-    "breed": "",
+    "odds": "5:1",
     "location": ""
   },
   {
     "id": 17,
     "name": "",
-    "picture": "images/alabama.png",
+    "picture": "images/worldcup/switzerland.png",
     "age": 0,
-    "breed": "",
-    "location": "",
-    "status":false
+    "odds": "80:1",
+    "location": ""
   },
   {
     "id": 18,
     "name": "",
-    "picture": "images/westvirginia.png",
+    "picture": "images/worldcup/costa-rica.png",
     "age": 0,
-    "breed": "",
+    "odds": "250:1",
     "location": ""
   },
   {
     "id": 19,
     "name": "",
-    "picture": "images/marshall.jpg",
+    "picture": "images/worldcup/serbia.png",
     "age": 0,
-    "breed": "",
-    "location": "",
-    "status":false
+    "odds": "150:1",
+    "location": ""
   },
   {
     "id": 20,
     "name": "",
-    "picture": "images/florida.png",
+    "picture": "images/worldcup/germany.png",
     "age": 0,
-    "breed": "",
-    "location": "",
-    "status":false
+    "odds": "4.5:1",
+    "location": ""
   },
   {
     "id": 21,
     "name": "",
-    "picture": "images/texastech.png",
+    "picture": "images/worldcup/mexico.png",
     "age": 0,
-    "breed": "",
+    "odds": "60:1",
     "location": ""
   },
   {
     "id": 22,
     "name": "",
-    "picture": "images/butler.jpeg",
+    "picture": "images/worldcup/sweden.png",
     "age": 0,
-    "breed": "",
-    "location": "",
-    "status":false
+    "odds": "80:1",
+    "location": ""
   },
   {
     "id": 23,
     "name": "",
-    "picture": "images/purdue.jpg",
+    "picture": "images/worldcup/south-korea.png",
     "age": 0,
-    "breed": "",
+    "odds": "500:1",
     "location": ""
   },
   {
     "id": 24,
     "name": "",
-    "picture": "images/kansas.jpg",
+    "picture": "images/worldcup/belgium.png",
     "age": 0,
-    "breed": "",
+    "odds": "12:1",
     "location": ""
   },
   {
     "id": 25,
     "name": "",
-    "picture": "images/setonhall.png",
+    "picture": "images/worldcup/panama.png",
     "age": 0,
-    "breed": "",
+    "odds": "1000:1",
     "location": "",
-    "status":false
+    "status":true
   },
   {
     "id": 26,
     "name": "",
-    "picture": "images/clemson.jpeg",
+    "picture": "images/worldcup/tunisia.png",
     "age": 0,
-    "breed": "",
+    "odds": "500:1",
     "location": ""
   },
   {
     "id": 27,
     "name": "",
-    "picture": "images/auburn.png",
+    "picture": "images/worldcup/england.png",
     "age": 0,
-    "breed": "",
-    "location": "",
-    "status":false
+    "odds": "20:1",
+    "location": ""
   },
   {
     "id": 28,
     "name": "",
-    "picture": "images/syracuse.gif",
+    "picture": "images/worldcup/poland.png",
     "age": 0,
-    "breed": "",
+    "odds": "40:1",
     "location": ""
   },
   {
     "id": 29,
     "name": "",
-    "picture": "images/michiganstate.png",
+    "picture": "images/worldcup/senegal.png",
     "age": 0,
-    "breed": "",
-    "location": "",
-    "status":false
+    "odds": "150:1",
+    "location": ""
   },
   {
     "id": 30,
     "name": "",
-    "picture": "images/rhodeisland.png",
+    "picture": "images/worldcup/colombia.png",
     "age": 0,
-    "breed": "",
-    "location": "",
-    "status":false
+    "odds": "25:1",
+    "location": ""
   },
   {
     "id": 31,
     "name": "",
-    "picture": "images/duke.png",
+    "picture": "images/worldcup/japan.png",
     "age": 0,
-    "breed": "",
+    "odds": "150:1",
     "location": ""
   }
 ]

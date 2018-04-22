@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.0",
-    "signature": "a7aa306d2e264d92ffef06296341a5e29b6e41eb"
+    "signature": "cc278578fca2ed486e1c4b6c86bd9484fb5dfe50"
   },
   "compilationOptions": {
     "defines": [
@@ -23,14 +23,29 @@
     ".NETCoreApp,Version=v2.0": {
       "ParallelWorldAPI/1.0.0": {
         "dependencies": {
+          "Microsoft.AspNet.WebApi.Cors": "5.2.4",
           "Microsoft.AspNetCore.All": "2.0.0",
-          "Microsoft.NETCore.App": "2.0.0"
+          "Microsoft.NETCore.App": "2.0.0",
+          "Nethereum.Web3": "2.4.0",
+          "SendGrid.SmtpApi": "1.3.3",
+          "Sendgrid": "9.9.0"
         },
         "runtime": {
           "ParallelWorldAPI.dll": {}
         },
         "compile": {
           "ParallelWorldAPI.dll": {}
+        }
+      },
+      "Common.Logging.Core/3.4.1": {
+        "dependencies": {
+          "Microsoft.CSharp": "4.4.0"
+        },
+        "runtime": {
+          "lib/netstandard1.0/Common.Logging.Core.dll": {}
+        },
+        "compile": {
+          "lib/netstandard1.0/Common.Logging.Core.dll": {}
         }
       },
       "Libuv/1.10.0": {
@@ -118,6 +133,49 @@
         },
         "compile": {
           "lib/netstandard1.6/Microsoft.AI.DependencyCollector.dll": {}
+        }
+      },
+      "Microsoft.AspNet.Cors/5.2.4": {
+        "runtime": {
+          "lib/net45/System.Web.Cors.dll": {}
+        },
+        "compile": {
+          "lib/net45/System.Web.Cors.dll": {}
+        }
+      },
+      "Microsoft.AspNet.WebApi.Client/5.2.4": {
+        "dependencies": {
+          "Newtonsoft.Json": "10.0.3",
+          "Newtonsoft.Json.Bson": "1.0.1"
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Net.Http.Formatting.dll": {}
+        },
+        "compile": {
+          "lib/netstandard2.0/System.Net.Http.Formatting.dll": {}
+        }
+      },
+      "Microsoft.AspNet.WebApi.Core/5.2.4": {
+        "dependencies": {
+          "Microsoft.AspNet.WebApi.Client": "5.2.4"
+        },
+        "runtime": {
+          "lib/net45/System.Web.Http.dll": {}
+        },
+        "compile": {
+          "lib/net45/System.Web.Http.dll": {}
+        }
+      },
+      "Microsoft.AspNet.WebApi.Cors/5.2.4": {
+        "dependencies": {
+          "Microsoft.AspNet.Cors": "5.2.4",
+          "Microsoft.AspNet.WebApi.Core": "5.2.4"
+        },
+        "runtime": {
+          "lib/net45/System.Web.Http.Cors.dll": {}
+        },
+        "compile": {
+          "lib/net45/System.Web.Http.Cors.dll": {}
         }
       },
       "Microsoft.AspNetCore/2.0.0": {
@@ -419,7 +477,7 @@
       "Microsoft.AspNetCore.Authentication.OAuth/2.0.0": {
         "dependencies": {
           "Microsoft.AspNetCore.Authentication": "2.0.0",
-          "Newtonsoft.Json": "10.0.1"
+          "Newtonsoft.Json": "10.0.3"
         },
         "runtime": {
           "lib/netstandard2.0/Microsoft.AspNetCore.Authentication.OAuth.dll": {}
@@ -792,7 +850,7 @@
       "Microsoft.AspNetCore.JsonPatch/2.0.0": {
         "dependencies": {
           "Microsoft.CSharp": "4.4.0",
-          "Newtonsoft.Json": "10.0.1"
+          "Newtonsoft.Json": "10.0.3"
         },
         "runtime": {
           "lib/netstandard2.0/Microsoft.AspNetCore.JsonPatch.dll": {}
@@ -1050,7 +1108,7 @@
         "dependencies": {
           "Microsoft.AspNetCore.Hosting.Abstractions": "2.0.0",
           "Microsoft.Extensions.Logging.Console": "2.0.0",
-          "Newtonsoft.Json": "10.0.1"
+          "Newtonsoft.Json": "10.0.3"
         },
         "runtime": {
           "lib/netstandard2.0/Microsoft.AspNetCore.NodeServices.dll": {}
@@ -1355,7 +1413,7 @@
           "Microsoft.Rest.ClientRuntime": "2.3.8",
           "Microsoft.Rest.ClientRuntime.Azure": "3.3.7",
           "NETStandard.Library": "2.0.0",
-          "Newtonsoft.Json": "10.0.1",
+          "Newtonsoft.Json": "10.0.3",
           "System.Net.Http": "4.3.0"
         },
         "runtime": {
@@ -1369,7 +1427,7 @@
         "dependencies": {
           "Microsoft.NETCore.Platforms": "2.0.0",
           "NETStandard.Library": "2.0.0",
-          "Newtonsoft.Json": "10.0.1",
+          "Newtonsoft.Json": "10.0.3",
           "System.Collections": "4.3.0",
           "System.Collections.Concurrent": "4.3.0",
           "System.Linq": "4.3.0",
@@ -1806,7 +1864,7 @@
         "dependencies": {
           "Microsoft.Extensions.Configuration": "2.0.0",
           "Microsoft.Extensions.Configuration.FileExtensions": "2.0.0",
-          "Newtonsoft.Json": "10.0.1"
+          "Newtonsoft.Json": "10.0.3"
         },
         "runtime": {
           "lib/netstandard2.0/Microsoft.Extensions.Configuration.Json.dll": {}
@@ -1861,7 +1919,7 @@
       "Microsoft.Extensions.DependencyModel/2.0.0": {
         "dependencies": {
           "Microsoft.DotNet.PlatformAbstractions": "2.0.0",
-          "Newtonsoft.Json": "10.0.1",
+          "Newtonsoft.Json": "10.0.3",
           "System.Diagnostics.Debug": "4.3.0",
           "System.Dynamic.Runtime": "4.3.0",
           "System.Linq": "4.3.0"
@@ -2069,7 +2127,7 @@
       "Microsoft.Extensions.Logging.EventSource/2.0.0": {
         "dependencies": {
           "Microsoft.Extensions.Logging": "2.0.0",
-          "Newtonsoft.Json": "10.0.1"
+          "Newtonsoft.Json": "10.0.3"
         },
         "runtime": {
           "lib/netstandard2.0/Microsoft.Extensions.Logging.EventSource.dll": {}
@@ -2217,7 +2275,7 @@
       "Microsoft.IdentityModel.Tokens/5.1.4": {
         "dependencies": {
           "Microsoft.IdentityModel.Logging": "1.1.4",
-          "Newtonsoft.Json": "10.0.1",
+          "Newtonsoft.Json": "10.0.3",
           "System.Collections": "4.3.0",
           "System.Diagnostics.Tools": "4.3.0",
           "System.Runtime": "4.3.0",
@@ -2254,7 +2312,7 @@
       "Microsoft.Rest.ClientRuntime/2.3.8": {
         "dependencies": {
           "NETStandard.Library": "2.0.0",
-          "Newtonsoft.Json": "10.0.1"
+          "Newtonsoft.Json": "10.0.3"
         },
         "runtime": {
           "lib/netstandard1.4/Microsoft.Rest.ClientRuntime.dll": {}
@@ -2267,7 +2325,7 @@
         "dependencies": {
           "Microsoft.Rest.ClientRuntime": "2.3.8",
           "NETStandard.Library": "2.0.0",
-          "Newtonsoft.Json": "10.0.1"
+          "Newtonsoft.Json": "10.0.3"
         },
         "runtime": {
           "lib/netstandard1.4/Microsoft.Rest.ClientRuntime.Azure.dll": {}
@@ -2317,33 +2375,181 @@
           "ref/netstandard2.0/Microsoft.Win32.Registry.dll": {}
         }
       },
-      "Newtonsoft.Json/10.0.1": {
+      "Nethereum.ABI/2.4.0": {
+        "dependencies": {
+          "NETStandard.Library": "2.0.0",
+          "Nethereum.Hex": "2.4.0",
+          "Nethereum.Util": "2.4.0",
+          "Portable.BouncyCastle": "1.8.1.1"
+        },
+        "runtime": {
+          "lib/netstandard1.1/Nethereum.ABI.dll": {}
+        },
+        "compile": {
+          "lib/netstandard1.1/Nethereum.ABI.dll": {}
+        }
+      },
+      "Nethereum.Accounts/2.4.0": {
+        "dependencies": {
+          "NETStandard.Library": "2.0.0",
+          "Nethereum.KeyStore": "2.4.0",
+          "Nethereum.RPC": "2.4.0",
+          "Nethereum.Signer": "2.4.0",
+          "Nethereum.Util": "2.4.0"
+        },
+        "runtime": {
+          "lib/netstandard1.1/Nethereum.Accounts.dll": {}
+        },
+        "compile": {
+          "lib/netstandard1.1/Nethereum.Accounts.dll": {}
+        }
+      },
+      "Nethereum.Contracts/2.4.0": {
+        "dependencies": {
+          "NETStandard.Library": "2.0.0",
+          "Nethereum.ABI": "2.4.0",
+          "Nethereum.Hex": "2.4.0",
+          "Nethereum.RPC": "2.4.0"
+        },
+        "runtime": {
+          "lib/netstandard1.1/Nethereum.Contracts.dll": {}
+        },
+        "compile": {
+          "lib/netstandard1.1/Nethereum.Contracts.dll": {}
+        }
+      },
+      "Nethereum.Hex/2.4.0": {
+        "dependencies": {
+          "NETStandard.Library": "2.0.0",
+          "Newtonsoft.Json": "10.0.3"
+        },
+        "runtime": {
+          "lib/netstandard1.1/Nethereum.Hex.dll": {}
+        },
+        "compile": {
+          "lib/netstandard1.1/Nethereum.Hex.dll": {}
+        }
+      },
+      "Nethereum.JsonRpc.Client/2.4.0": {
+        "dependencies": {
+          "Common.Logging.Core": "3.4.1",
+          "NETStandard.Library": "2.0.0",
+          "Newtonsoft.Json": "10.0.3"
+        },
+        "runtime": {
+          "lib/netstandard1.1/Nethereum.JsonRpc.Client.dll": {}
+        },
+        "compile": {
+          "lib/netstandard1.1/Nethereum.JsonRpc.Client.dll": {}
+        }
+      },
+      "Nethereum.JsonRpc.RpcClient/2.4.0": {
+        "dependencies": {
+          "Common.Logging.Core": "3.4.1",
+          "NETStandard.Library": "2.0.0",
+          "Nethereum.JsonRpc.Client": "2.4.0",
+          "Newtonsoft.Json": "10.0.3"
+        },
+        "runtime": {
+          "lib/netstandard1.1/Nethereum.JsonRpc.RpcClient.dll": {}
+        },
+        "compile": {
+          "lib/netstandard1.1/Nethereum.JsonRpc.RpcClient.dll": {}
+        }
+      },
+      "Nethereum.KeyStore/2.4.0": {
+        "dependencies": {
+          "NETStandard.Library": "2.0.0",
+          "Nethereum.Hex": "2.4.0",
+          "Portable.BouncyCastle": "1.8.1.1"
+        },
+        "runtime": {
+          "lib/netstandard1.1/Nethereum.KeyStore.dll": {}
+        },
+        "compile": {
+          "lib/netstandard1.1/Nethereum.KeyStore.dll": {}
+        }
+      },
+      "Nethereum.RLP/2.4.0": {
+        "dependencies": {
+          "NETStandard.Library": "2.0.0",
+          "Nethereum.Hex": "2.4.0"
+        },
+        "runtime": {
+          "lib/netstandard1.1/Nethereum.RLP.dll": {}
+        },
+        "compile": {
+          "lib/netstandard1.1/Nethereum.RLP.dll": {}
+        }
+      },
+      "Nethereum.RPC/2.4.0": {
+        "dependencies": {
+          "NETStandard.Library": "2.0.0",
+          "Nethereum.Hex": "2.4.0",
+          "Nethereum.JsonRpc.Client": "2.4.0"
+        },
+        "runtime": {
+          "lib/netstandard1.1/Nethereum.RPC.dll": {}
+        },
+        "compile": {
+          "lib/netstandard1.1/Nethereum.RPC.dll": {}
+        }
+      },
+      "Nethereum.Signer/2.4.0": {
+        "dependencies": {
+          "NETStandard.Library": "2.0.0",
+          "Nethereum.Hex": "2.4.0",
+          "Nethereum.RLP": "2.4.0",
+          "Nethereum.Util": "2.4.0",
+          "Portable.BouncyCastle": "1.8.1.1"
+        },
+        "runtime": {
+          "lib/netstandard1.1/Nethereum.Signer.dll": {}
+        },
+        "compile": {
+          "lib/netstandard1.1/Nethereum.Signer.dll": {}
+        }
+      },
+      "Nethereum.Util/2.4.0": {
+        "dependencies": {
+          "NETStandard.Library": "2.0.0",
+          "Nethereum.Hex": "2.4.0",
+          "Portable.BouncyCastle": "1.8.1.1"
+        },
+        "runtime": {
+          "lib/netstandard1.1/Nethereum.Util.dll": {}
+        },
+        "compile": {
+          "lib/netstandard1.1/Nethereum.Util.dll": {}
+        }
+      },
+      "Nethereum.Web3/2.4.0": {
+        "dependencies": {
+          "NETStandard.Library": "2.0.0",
+          "Nethereum.ABI": "2.4.0",
+          "Nethereum.Accounts": "2.4.0",
+          "Nethereum.Contracts": "2.4.0",
+          "Nethereum.Hex": "2.4.0",
+          "Nethereum.JsonRpc.RpcClient": "2.4.0",
+          "Nethereum.KeyStore": "2.4.0",
+          "Nethereum.RPC": "2.4.0",
+          "Nethereum.Signer": "2.4.0",
+          "Nethereum.Util": "2.4.0"
+        },
+        "runtime": {
+          "lib/netstandard1.1/Nethereum.Web3.dll": {}
+        },
+        "compile": {
+          "lib/netstandard1.1/Nethereum.Web3.dll": {}
+        }
+      },
+      "Newtonsoft.Json/10.0.3": {
         "dependencies": {
           "Microsoft.CSharp": "4.4.0",
-          "System.Collections": "4.3.0",
+          "NETStandard.Library": "2.0.0",
           "System.ComponentModel.TypeConverter": "4.3.0",
-          "System.Diagnostics.Debug": "4.3.0",
-          "System.Dynamic.Runtime": "4.3.0",
-          "System.Globalization": "4.3.0",
-          "System.IO": "4.3.0",
-          "System.Linq": "4.3.0",
-          "System.Linq.Expressions": "4.3.0",
-          "System.ObjectModel": "4.3.0",
-          "System.Reflection": "4.3.0",
-          "System.Reflection.Extensions": "4.3.0",
-          "System.Resources.ResourceManager": "4.3.0",
-          "System.Runtime": "4.3.0",
-          "System.Runtime.Extensions": "4.3.0",
-          "System.Runtime.Numerics": "4.3.0",
           "System.Runtime.Serialization.Formatters": "4.3.0",
           "System.Runtime.Serialization.Primitives": "4.3.0",
-          "System.Text.Encoding": "4.3.0",
-          "System.Text.Encoding.Extensions": "4.3.0",
-          "System.Text.RegularExpressions": "4.3.0",
-          "System.Threading": "4.3.0",
-          "System.Threading.Tasks": "4.3.0",
-          "System.Xml.ReaderWriter": "4.3.0",
-          "System.Xml.XDocument": "4.3.0",
           "System.Xml.XmlDocument": "4.3.0"
         },
         "runtime": {
@@ -2356,13 +2562,37 @@
       "Newtonsoft.Json.Bson/1.0.1": {
         "dependencies": {
           "NETStandard.Library": "2.0.0",
-          "Newtonsoft.Json": "10.0.1"
+          "Newtonsoft.Json": "10.0.3"
         },
         "runtime": {
           "lib/netstandard1.3/Newtonsoft.Json.Bson.dll": {}
         },
         "compile": {
           "lib/netstandard1.3/Newtonsoft.Json.Bson.dll": {}
+        }
+      },
+      "Portable.BouncyCastle/1.8.1.1": {
+        "dependencies": {
+          "System.Collections": "4.3.0",
+          "System.Diagnostics.Debug": "4.3.0",
+          "System.Globalization": "4.3.0",
+          "System.IO": "4.3.0",
+          "System.IO.FileSystem": "4.3.0",
+          "System.IO.FileSystem.Primitives": "4.3.0",
+          "System.Linq": "4.3.0",
+          "System.Reflection": "4.3.0",
+          "System.Reflection.Extensions": "4.3.0",
+          "System.Runtime": "4.3.0",
+          "System.Runtime.Extensions": "4.3.0",
+          "System.Text.Encoding": "4.3.0",
+          "System.Threading": "4.3.0",
+          "System.Threading.Tasks": "4.3.0"
+        },
+        "runtime": {
+          "lib/netstandard1.3/crypto.dll": {}
+        },
+        "compile": {
+          "lib/netstandard1.3/crypto.dll": {}
         }
       },
       "Remotion.Linq/2.1.1": {
@@ -2546,6 +2776,30 @@
             "rid": "win-x86",
             "assetType": "native"
           }
+        }
+      },
+      "Sendgrid/9.9.0": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Http.Abstractions": "2.0.0",
+          "NETStandard.Library": "2.0.0",
+          "Newtonsoft.Json": "10.0.3"
+        },
+        "runtime": {
+          "lib/netstandard1.3/SendGrid.dll": {}
+        },
+        "compile": {
+          "lib/netstandard1.3/SendGrid.dll": {}
+        }
+      },
+      "SendGrid.SmtpApi/1.3.3": {
+        "dependencies": {
+          "Newtonsoft.Json": "10.0.3"
+        },
+        "runtime": {
+          "lib/SendGrid.SmtpApi.dll": {}
+        },
+        "compile": {
+          "lib/SendGrid.SmtpApi.dll": {}
         }
       },
       "SQLitePCLRaw.bundle_green/1.1.7": {
@@ -3784,7 +4038,7 @@
         "dependencies": {
           "Microsoft.Data.OData": "5.8.2",
           "NETStandard.Library": "2.0.0",
-          "Newtonsoft.Json": "10.0.1",
+          "Newtonsoft.Json": "10.0.3",
           "System.Spatial": "5.8.2"
         },
         "runtime": {
@@ -3978,6 +4232,13 @@
       "serviceable": false,
       "sha512": ""
     },
+    "Common.Logging.Core/3.4.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-wLHldZHvxsSD6Ahonfj00/SkfHfKqO+YT6jsUwVm8Rch1REL9IArHAcSLXxYxYfu5/4ydGtmXvOtaH3AkVPu0A==",
+      "path": "common.logging.core/3.4.1",
+      "hashPath": "common.logging.core.3.4.1.nupkg.sha512"
+    },
     "Libuv/1.10.0": {
       "type": "package",
       "serviceable": true,
@@ -4009,6 +4270,34 @@
       "path": "microsoft.applicationinsights.dependencycollector/2.4.1",
       "hashPath": "microsoft.applicationinsights.dependencycollector.2.4.1.nupkg.sha512",
       "runtimeStoreManifestName": "aspnetcore-store-2.0.0-linux-x64.xml;aspnetcore-store-2.0.0-osx-x64.xml;aspnetcore-store-2.0.0-win7-x64.xml;aspnetcore-store-2.0.0-win7-x86.xml"
+    },
+    "Microsoft.AspNet.Cors/5.2.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-aM03kkW5g8hJt99urM1SlTP4xwhp6U1hJYCEgINO5gHMZxG+ejZh+JATbhp+eyd6Sp6B6IAWPv7xWjLXOEU4AA==",
+      "path": "microsoft.aspnet.cors/5.2.4",
+      "hashPath": "microsoft.aspnet.cors.5.2.4.nupkg.sha512"
+    },
+    "Microsoft.AspNet.WebApi.Client/5.2.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-OdBVC2bQWkf9qDd7Mt07ev4SwIdu6VmLBMTWC0D5cOP/HWSXyv/77otwtXVrAo42duNjvXOjzjP5oOI9m1+DTQ==",
+      "path": "microsoft.aspnet.webapi.client/5.2.4",
+      "hashPath": "microsoft.aspnet.webapi.client.5.2.4.nupkg.sha512"
+    },
+    "Microsoft.AspNet.WebApi.Core/5.2.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-rbLh178vmOWxhFQgiVkKmZyG53XEdyBZJbCsV36a4VxokIBzSRYUaMkXWEwJTy83PoHhPiDHNQFN3A3BQzwhtg==",
+      "path": "microsoft.aspnet.webapi.core/5.2.4",
+      "hashPath": "microsoft.aspnet.webapi.core.5.2.4.nupkg.sha512"
+    },
+    "Microsoft.AspNet.WebApi.Cors/5.2.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-JifCqp6kxQpP9ypvjBagFguoHXlxp39FD+jsgZec4u1juBoGsnMhy8GgZjL3O7hAuRuVbdL98S+q+nVSPEGmvA==",
+      "path": "microsoft.aspnet.webapi.cors/5.2.4",
+      "hashPath": "microsoft.aspnet.webapi.cors.5.2.4.nupkg.sha512"
     },
     "Microsoft.AspNetCore/2.0.0": {
       "type": "package",
@@ -5264,13 +5553,96 @@
       "path": "microsoft.win32.registry/4.4.0",
       "hashPath": "microsoft.win32.registry.4.4.0.nupkg.sha512"
     },
-    "Newtonsoft.Json/10.0.1": {
+    "Nethereum.ABI/2.4.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-ebWzW9j2nwxQeBo59As2TYn7nYr9BHicqqCwHOD1Vdo+50HBtLPuqdiCYJcLdTRknpYis/DSEOQz5KmZxwrIAg==",
-      "path": "newtonsoft.json/10.0.1",
-      "hashPath": "newtonsoft.json.10.0.1.nupkg.sha512",
-      "runtimeStoreManifestName": "aspnetcore-store-2.0.0-linux-x64.xml;aspnetcore-store-2.0.0-osx-x64.xml;aspnetcore-store-2.0.0-win7-x64.xml;aspnetcore-store-2.0.0-win7-x86.xml"
+      "sha512": "sha512-WwCi0czv966/ALvb+cNfyATdc4iRjG3OKUtpq+mwQS4OJv5voj33+JbBtJt552oOShk3UxjcYTHlDLkTL63FMw==",
+      "path": "nethereum.abi/2.4.0",
+      "hashPath": "nethereum.abi.2.4.0.nupkg.sha512"
+    },
+    "Nethereum.Accounts/2.4.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-cT7rhdUuH3+ggIF2qIKPjtgU0GX/bS3FoHEwhK8C1mvfbHieuW3w7WRsu6n3iqydbIxHiMmJPdI/pv4Zgoo5lw==",
+      "path": "nethereum.accounts/2.4.0",
+      "hashPath": "nethereum.accounts.2.4.0.nupkg.sha512"
+    },
+    "Nethereum.Contracts/2.4.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-HjsfbTQgNpnQnmdJn190/815zV/YyZyzOLI0LLwqJuVNI0bWL/pDXhPMM3flH58r0ncjDRwVezs6rUKtGvsPdQ==",
+      "path": "nethereum.contracts/2.4.0",
+      "hashPath": "nethereum.contracts.2.4.0.nupkg.sha512"
+    },
+    "Nethereum.Hex/2.4.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Fo6PmzhYRMHCamf8djzD9ISnYTALhKRoxlOW14dQg6JipX/kGDDvNbQLoUW/C911n9EX4BPm0v+VGZYnGEeEUQ==",
+      "path": "nethereum.hex/2.4.0",
+      "hashPath": "nethereum.hex.2.4.0.nupkg.sha512"
+    },
+    "Nethereum.JsonRpc.Client/2.4.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-lgR/R5LtK4cylx+Jk5gCwKafj30AhqSbwvEh5RUfmLz9Uc5DMN1Sz9SImNM93xnqpr4DVxeJ0j5ku/fGOxRCbA==",
+      "path": "nethereum.jsonrpc.client/2.4.0",
+      "hashPath": "nethereum.jsonrpc.client.2.4.0.nupkg.sha512"
+    },
+    "Nethereum.JsonRpc.RpcClient/2.4.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-o9MDi49r8paoDMEblUwBfGSO6g8PuSNmqZmLOAwJ0UMsbL+SI5cFRbDkM4LwoUcs3Z4y9b9sDlemovjJWoEYPQ==",
+      "path": "nethereum.jsonrpc.rpcclient/2.4.0",
+      "hashPath": "nethereum.jsonrpc.rpcclient.2.4.0.nupkg.sha512"
+    },
+    "Nethereum.KeyStore/2.4.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-3nin7chmbkyA/HefakOxebQKrxonp0LLCBmRXM7zj/psdprpDumlFAEibs8H8gHSx7q0VET7XWx96JdpjMddYA==",
+      "path": "nethereum.keystore/2.4.0",
+      "hashPath": "nethereum.keystore.2.4.0.nupkg.sha512"
+    },
+    "Nethereum.RLP/2.4.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-fDPgxYGFqkwAl0RjiB3xCD2nrnwZeli7WXicJX8zWKEE2Dq+Qk0YrDvYodNSv0RS0GAwIKr1pllhNep9HMpeQQ==",
+      "path": "nethereum.rlp/2.4.0",
+      "hashPath": "nethereum.rlp.2.4.0.nupkg.sha512"
+    },
+    "Nethereum.RPC/2.4.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-zIBw+yVNai8cZDm6XVi0kZ1lJg4xjrGSsnrv1TRWQRXZWN6iOB685DwCZsLPIQzgoJ8M/P40dPc1V9I+CPrS2w==",
+      "path": "nethereum.rpc/2.4.0",
+      "hashPath": "nethereum.rpc.2.4.0.nupkg.sha512"
+    },
+    "Nethereum.Signer/2.4.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-oIPM4bqWeeUjlVmOZ2vXsbeubkyJVWH4+4541PdxEnBjAgHbkVbn+eWFORjwya64VjZn+3/s92PJIqNuWI1Hgw==",
+      "path": "nethereum.signer/2.4.0",
+      "hashPath": "nethereum.signer.2.4.0.nupkg.sha512"
+    },
+    "Nethereum.Util/2.4.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-NGkh/rbqXAoHAWfvp1HLwIoKkIqXVsuhbgWsEKTqYGqKT6itIZbTXtKmvJkfFCTNxZBffWhF2AYxq1nL6odJWA==",
+      "path": "nethereum.util/2.4.0",
+      "hashPath": "nethereum.util.2.4.0.nupkg.sha512"
+    },
+    "Nethereum.Web3/2.4.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-/YqA9APdaR47MAJKjaIWR/jmoF9grkpoa5vWv0RaihrAyFUnYcIXBIbocpvqUCgPoGcZS9YnxV0AD5Iy+OavEw==",
+      "path": "nethereum.web3/2.4.0",
+      "hashPath": "nethereum.web3.2.4.0.nupkg.sha512"
+    },
+    "Newtonsoft.Json/10.0.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-hSXaFmh7hNCuEoC4XNY5DrRkLDzYHqPx/Ik23R4J86Z7PE/Y6YidhG602dFVdLBRSdG6xp9NabH3dXpcoxWvww==",
+      "path": "newtonsoft.json/10.0.3",
+      "hashPath": "newtonsoft.json.10.0.3.nupkg.sha512"
     },
     "Newtonsoft.Json.Bson/1.0.1": {
       "type": "package",
@@ -5279,6 +5651,13 @@
       "path": "newtonsoft.json.bson/1.0.1",
       "hashPath": "newtonsoft.json.bson.1.0.1.nupkg.sha512",
       "runtimeStoreManifestName": "aspnetcore-store-2.0.0-linux-x64.xml;aspnetcore-store-2.0.0-osx-x64.xml;aspnetcore-store-2.0.0-win7-x64.xml;aspnetcore-store-2.0.0-win7-x86.xml"
+    },
+    "Portable.BouncyCastle/1.8.1.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-rv/VIvOMhZaZ6iSyKeJiwrYWq4J05Td59VekLxmLD+nR0liHFLPtkUtPfJL2sMaVghy1PpF/HjSvvcoNZQtlGA==",
+      "path": "portable.bouncycastle/1.8.1.1",
+      "hashPath": "portable.bouncycastle.1.8.1.1.nupkg.sha512"
     },
     "Remotion.Linq/2.1.1": {
       "type": "package",
@@ -5437,6 +5816,20 @@
       "path": "runtime.win-x86.runtime.native.system.data.sqlclient.sni/4.4.0",
       "hashPath": "runtime.win-x86.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
       "runtimeStoreManifestName": "aspnetcore-store-2.0.0-win7-x86.xml"
+    },
+    "Sendgrid/9.9.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-3v4aIYXqTvhnozBvpCyf+U9DMiZzN9s4m7tpl8RjVHRN0IUKSFwJ0eio7GVjT03vTTUOXhOY8M+15zLYzQGhYQ==",
+      "path": "sendgrid/9.9.0",
+      "hashPath": "sendgrid.9.9.0.nupkg.sha512"
+    },
+    "SendGrid.SmtpApi/1.3.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-A0LmTaqn3hP5G6ysMaWRBMN8R8hZ7UoUb4jUxHqhD2aVhff9HyksKp4NDZ+0VWGyW/XA/tDbBAAuiQloo7JW9g==",
+      "path": "sendgrid.smtpapi/1.3.3",
+      "hashPath": "sendgrid.smtpapi.1.3.3.nupkg.sha512"
     },
     "SQLitePCLRaw.bundle_green/1.1.7": {
       "type": "package",

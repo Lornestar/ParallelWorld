@@ -1,0 +1,274 @@
+[
+  {
+    "id": 0,
+    "name": "",
+    "picture": "images/UMBC.png",
+    "age": 0,
+    "odds": "10:1",
+    "location": "",
+    "status":false
+  },
+  {
+    "id": 1,
+    "name": "",
+    "picture": "images/kansasst.jpeg",
+    "age": 0,
+    "odds": "10:1",
+    "location": ""    
+  },
+  {
+    "id": 2,
+    "name": "",
+    "picture": "images/kentucky.png",
+    "age": 0,
+    "odds": "10:1",
+    "location": ""
+  },
+  {
+    "id": 3,
+    "name": "",
+    "picture": "images/buffalo.jpeg",
+    "age": 0,
+    "odds": "10:1",
+    "location": "",
+    "status":false
+  },
+  {
+    "id": 4,
+    "name": "",
+    "picture": "images/loyolachicago.jpg",
+    "age": 0,
+    "odds": "10:1",
+    "location": ""
+  },
+  {
+    "id": 5,
+    "name": "",
+    "picture": "images/tennessee.jpg",
+    "age": 0,
+    "breed": "",
+    "location": "",
+    "status":false
+  },
+  {
+    "id": 6,
+    "name": "",
+    "picture": "images/nevada.png",
+    "age": 0,
+    "breed": "",
+    "location": ""
+  },
+  {
+    "id": 7,
+    "name": "",
+    "picture": "images/cincinnati.jpeg",
+    "age": 0,
+    "breed": "",
+    "location": "",
+    "status":false
+  },
+  {
+    "id": 8,
+    "name": "",
+    "picture": "images/xavier.png",
+    "age": 0,
+    "breed": "",
+    "location": "",
+    "status":false
+  },
+  {
+    "id": 9,
+    "name": "",
+    "picture": "images/floridastate.jpg",
+    "age": 0,
+    "breed": "",
+    "location": ""
+  },
+  {
+    "id": 10,
+    "name": "",
+    "picture": "images/ohiostate.png",
+    "age": 0,
+    "breed": "",
+    "location": "",
+    "status":false
+  },
+  {
+    "id": 11,
+    "name": "",
+    "picture": "images/gonzaga.png",
+    "age": 0,
+    "breed": "",
+    "location": ""
+  },
+  {
+    "id": 12,
+    "name": "",
+    "picture": "images/houston.png",
+    "age": 0,
+    "breed": "",
+    "location": "",
+    "status":false
+  },
+  {
+    "id": 13,
+    "name": "",
+    "picture": "images/michigan.jpg",
+    "age": 0,
+    "breed": "",
+    "location": ""
+  },
+  {
+    "id": 14,
+    "name": "",
+    "picture": "images/texasam.png",
+    "age": 0,
+    "breed": "",
+    "location": ""
+  },
+  {
+    "id": 15,
+    "name": "",
+    "picture": "images/northcarolina.png",
+    "age": 0,
+    "breed": "",
+    "location": "",
+    "status":false
+  },
+  {
+    "id": 16,
+    "name": "",
+    "picture": "images/villanova.png",
+    "age": 0,
+    "breed": "",
+    "location": ""
+  },
+  {
+    "id": 17,
+    "name": "",
+    "picture": "images/alabama.png",
+    "age": 0,
+    "breed": "",
+    "location": "",
+    "status":false
+  },
+  {
+    "id": 18,
+    "name": "",
+    "picture": "images/westvirginia.png",
+    "age": 0,
+    "breed": "",
+    "location": ""
+  },
+  {
+    "id": 19,
+    "name": "",
+    "picture": "images/marshall.jpg",
+    "age": 0,
+    "breed": "",
+    "location": "",
+    "status":false
+  },
+  {
+    "id": 20,
+    "name": "",
+    "picture": "images/florida.png",
+    "age": 0,
+    "breed": "",
+    "location": "",
+    "status":false
+  },
+  {
+    "id": 21,
+    "name": "",
+    "picture": "images/texastech.png",
+    "age": 0,
+    "breed": "",
+    "location": ""
+  },
+  {
+    "id": 22,
+    "name": "",
+    "picture": "images/butler.jpeg",
+    "age": 0,
+    "breed": "",
+    "location": "",
+    "status":false
+  },
+  {
+    "id": 23,
+    "name": "",
+    "picture": "images/purdue.jpg",
+    "age": 0,
+    "breed": "",
+    "location": ""
+  },
+  {
+    "id": 24,
+    "name": "",
+    "picture": "images/kansas.jpg",
+    "age": 0,
+    "breed": "",
+    "location": ""
+  },
+  {
+    "id": 25,
+    "name": "",
+    "picture": "images/setonhall.png",
+    "age": 0,
+    "breed": "",
+    "location": "",
+    "status":false
+  },
+  {
+    "id": 26,
+    "name": "",
+    "picture": "images/clemson.jpeg",
+    "age": 0,
+    "breed": "",
+    "location": ""
+  },
+  {
+    "id": 27,
+    "name": "",
+    "picture": "images/auburn.png",
+    "age": 0,
+    "breed": "",
+    "location": "",
+    "status":false
+  },
+  {
+    "id": 28,
+    "name": "",
+    "picture": "images/syracuse.gif",
+    "age": 0,
+    "breed": "",
+    "location": ""
+  },
+  {
+    "id": 29,
+    "name": "",
+    "picture": "images/michiganstate.png",
+    "age": 0,
+    "breed": "",
+    "location": "",
+    "status":false
+  },
+  {
+    "id": 30,
+    "name": "",
+    "picture": "images/rhodeisland.png",
+    "age": 0,
+    "breed": "",
+    "location": "",
+    "status":false
+  },
+  {
+    "id": 31,
+    "name": "",
+    "picture": "images/duke.png",
+    "age": 0,
+    "breed": "",
+    "location": ""
+  }
+]

@@ -1,54 +1,26 @@
 var usersteams = [];
-var tournamentid = 0;
-var apibaseurl = "http://localhost:5000/api/"
+var apibaseurl = "https://api.oneowneronewinner.com/api/"
+var petsRow = $('#petsRow');
+var petTemplate = $('#petTemplate');
+var pathname = window.location.pathname;
+var intprizeamount;
 
 App = {
   web3Provider: null,
   contracts: {},
 
   init: function() {
-    // Load pets.
-    $.getJSON('teams.json', function(data) {
-      var petsRow = $('#petsRow');
-      var petTemplate = $('#petTemplate');
-
-      for (i = 0; i < data.length; i ++) {
-        petTemplate.find('.panel-title').text(data[i].name).attr('id','title_'+i);
-        petTemplate.find('img').attr('src', data[i].picture);
-        petTemplate.find('.pet-odds').text(data[i].odds);
-        petTemplate.find('.pet-price').text(data[i].age);
-        petTemplate.find('.pet-owner').text(data[i].location);
-        petTemplate.find('.btn-buyteam').attr('data-id', data[i].id);
-        
-        petTemplate.find('.pet-oddsyouget').attr('id',"oddsyouget_"+i);
-        petTemplate.find('.pet-price').attr('id',"nextprice_"+i);
-        petTemplate.find('.pet-owner').attr('id',"owner_"+i);
-        petTemplate.find('.pet-theypaid').attr('id', "theypaid_"+i);
-
-        var teamstatus = data[i].status;
-        if (teamstatus == false)
-        {
-          //team is out, communicate that
-          var buttonpanel = petTemplate.find('.btn-buyteam');
-          buttonpanel.text('Team Out');
-          buttonpanel.attr('style','background-color:red').attr('disabled','true');          
+    // Load teams.    
+    if (!pathname.includes('myteams.html'))
+    {
+      $.getJSON(teamsjsonfile, function(data) {
+        for (i = 0; i < data.length; i ++) {
+          addteamtoscreen(i, data);
         }
-        else{
-          //team is in, communicate that
-          var buttonpanel = petTemplate.find('.btn-buyteam');
-          buttonpanel.text('Buy Team');
-          buttonpanel.attr('style','background-color:white');
-          buttonpanel.removeAttr("disabled"); 
-        }
-        //var testdom = petTemplate.find('.pet-title');
-        //testdom.attr('id',"title_"+i);
-
-        petsRow.append(petTemplate.html());
-      }
-    });
-
+      });
+    }
+    
     //setup countdown
-    var utcSeconds = 1522724400;
     var date = new Date(0); // The 0 there is the key, which sets the date to the epoch
     date.setUTCSeconds(utcSeconds);
 
@@ -90,7 +62,7 @@ App = {
   },
 
   initContract: function() {
-    $.getJSON('ParallelWorld.json', function(data) {
+    $.getJSON('/events/worldcup.json', function(data) {
       // Get the necessary contract artifact file and instantiate it with truffle-contract
       var ParallelWorldArtifact = data;
       App.contracts.ParallelWorld = TruffleContract(ParallelWorldArtifact);
@@ -176,8 +148,7 @@ App = {
         for (var i = 0; i < listeditems.length; i++) {
           listeditems[i] = listeditems[i].c[0];
         }
-        
-        var intprizeamount;
+                
         //show prize amount
         instance.getprizeamount.call().then(function(result)
         {
@@ -186,6 +157,7 @@ App = {
             prizeamount = prizeamount + " ETH";
             document.getElementById("prizeamount").innerHTML = "Prize amount = " + prizeamount;
             document.getElementById("prizeamount").value = prizeamount;
+            updateethconversion();
         });
 
         //get next price & name on each item
@@ -194,21 +166,36 @@ App = {
             var specificiteminfo = result;
             var currentindex = specificiteminfo[0].c[0];//column 0
 
+            var currentprice = web3.toBigNumber(specificiteminfo[3]); //column 3
+            var nextpriceamount = web3.toBigNumber(specificiteminfo[4]); //column 4
+            var itemname = web3.toAscii(specificiteminfo[5]); //column 5
+            var currentowner = specificiteminfo[1];
+
+
+            nextpriceamount = parseethamount(nextpriceamount);              
+            var intnextpriceamount = nextpriceamount;
+            nextpriceamount = nextpriceamount + " ETH";
+
+            currentprice = parseethamount(currentprice);
+            currentprice = currentprice + " ETH";
+
+            if (pathname.includes('myteams.html')) //on myteams page
+            {
+              if (currentowner == web3.eth.accounts[0]) //current owner of team , so display team on page
+              {
+                $.getJSON(teamsjsonfile, function(data) {   
+                    data[currentindex].name = itemname;     
+                    data[currentindex].age = currentprice;    
+                    addteamtoscreen(currentindex, data);                    
+                });
+                
+              }
+            }
+
             var currentpricedom = document.getElementById("theypaid_"+currentindex);
             if (currentpricedom)
             {
-              var currentprice = web3.toBigNumber(specificiteminfo[3]); //column 3
-              var nextpriceamount = web3.toBigNumber(specificiteminfo[4]); //column 4
-              var itemname = web3.toAscii(specificiteminfo[5]); //column 5
-              var currentowner = specificiteminfo[1];
-
-              nextpriceamount = parseethamount(nextpriceamount);              
-              var intnextpriceamount = nextpriceamount;
-              nextpriceamount = nextpriceamount + " ETH";
-
-              currentprice = parseethamount(currentprice);
-              currentprice = currentprice + " ETH";
-
+              
               var currentpricedom = document.getElementById("theypaid_"+currentindex);
               currentpricedom.innerHTML = currentprice;
               var pricedom = document.getElementById("nextprice_"+currentindex);
@@ -218,8 +205,7 @@ App = {
               var ownerdom = document.getElementById("owner_"+currentindex);
               ownerdom.innerHTML = currentowner;
               
-              //if currentowner == current metamask user then, add to 'usersteams'
-              usersteams[usersteams.length] = specificiteminfo;            
+                          
 
               //calculate odds you're getting
               var oddsyouregetting = intprizeamount / intnextpriceamount;
@@ -330,7 +316,7 @@ App = {
 
 $(function() {
   $(window).load(function() {
-    App.init();
+    App.init();    
   });
 });
 
@@ -339,6 +325,7 @@ function parseethamount(amount)
 {
   currentamount = parseFloat(amount);
   currentamount = currentamount * 0.000000000000000001;
+  currentamount = parseFloat(currentamount).toFixed(4);
   return currentamount;
 }
 
@@ -346,7 +333,7 @@ function getaccountinfo(ethaddress)
 {
   //Call parallelworld API to inform a tx has occured
   var apidata;
-  var apiurl = apibaseurl + "account/" + ethaddress
+  var apiurl = apibaseurl + "account/" + ethaddress;
   $.ajax({
     type: "GET",
     url: apiurl,
@@ -380,10 +367,60 @@ function updateaccountinfo()
   $.ajax({
     type: "POST",
     url: apiurl,
-    data: JSON.stringify(apidata),
-    success: function(){},
-    dataType: "json",
+    data: JSON.stringify(apidata),    
+    success: function(){alert('Saved');},
+    dataType :"json",
     contentType:  "application/json"
   });
 }
 
+function addteamtoscreen(i, data)
+{
+  petTemplate.find('.panel-title').text(data[i].name).attr('id','title_'+i);
+        petTemplate.find('img').attr('src', data[i].picture);
+        petTemplate.find('.pet-odds').text(data[i].odds);
+        petTemplate.find('.pet-price').text(data[i].age);
+        petTemplate.find('.pet-owner').text(data[i].location);
+        petTemplate.find('.btn-buyteam').attr('data-id', data[i].id);
+        
+        petTemplate.find('.pet-oddsyouget').attr('id',"oddsyouget_"+i);
+        petTemplate.find('.pet-price').attr('id',"nextprice_"+i);
+        petTemplate.find('.pet-owner').attr('id',"owner_"+i);
+        petTemplate.find('.pet-theypaid').attr('id', "theypaid_"+i);
+
+        var teamstatus = data[i].status;
+        if (teamstatus == false)
+        {
+          //team is out, communicate that
+          var buttonpanel = petTemplate.find('.btn-buyteam');
+          buttonpanel.text('Team Out');
+          buttonpanel.attr('style','background-color:red').attr('disabled','true');          
+        }
+        else{
+          //team is in, communicate that
+          var buttonpanel = petTemplate.find('.btn-buyteam');
+          buttonpanel.text('Buy Team');
+          buttonpanel.attr('style','background-color:white');
+          buttonpanel.removeAttr("disabled"); 
+        }
+        //var testdom = petTemplate.find('.pet-title');
+        //testdom.attr('id',"title_"+i);
+
+        petsRow.append(petTemplate.html());
+}
+
+function updateethconversion()
+{
+  var apiurl = "https://api.coinmarketcap.com/v1/ticker/ethereum/";
+  $.ajax({
+    type: "GET",
+    url: apiurl,
+    dataType :"json",
+    success : function(data){
+        var ethusd = data[0].price_usd;
+        var priceinusd = intprizeamount * ethusd;
+        priceinusd = Math.round(priceinusd * 100) / 100
+        $('#ethusdprice').text("($" + priceinusd + " USD)");
+      }
+  });
+}

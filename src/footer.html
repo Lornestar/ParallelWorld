@@ -1,0 +1,30 @@
+
+
+
+
+<script type="text/javascript">
+  function checkthefirebase() {
+      
+      //$("#lastrefresh").val(new Date().getTime());
+
+      var dataRef = new Firebase('https://lornestar.firebaseio.com/parallelworld/' + tournamentid + '/events');
+      dataRef.on('value', function (snapshot) {
+          //console.log(snapshot.val());
+          var eventslogrow = $('#eventslogrow');
+          var data = snapshot.val();
+          for(var i = 0; i < data.length; i++) 
+          {
+            eventslogrow.append(data[i].description + '<br>');
+            //console.log();
+          }
+      });
+    }
+    
+
+    var teamsjsonfile = "teams.json";
+    var utcSeconds = 1531673100; //world cup ending
+    var contractjson = "/events/worldcup.json";
+    var tournamentid = 0;
+
+    checkthefirebase();
+  </script>

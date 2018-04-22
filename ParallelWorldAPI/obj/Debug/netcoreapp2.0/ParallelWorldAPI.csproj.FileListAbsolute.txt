@@ -25,7 +25,6 @@
 /Users/Lornestar/Documents/Bitcoin/ParallelWorld/ParallelWorldAPI/bin/Debug/netcoreapp2.0/ParallelWorldAPI.runtimeconfig.dev.json
 /Users/Lornestar/Documents/Bitcoin/ParallelWorld/ParallelWorldAPI/bin/Debug/netcoreapp2.0/ParallelWorldAPI.dll
 /Users/Lornestar/Documents/Bitcoin/ParallelWorld/ParallelWorldAPI/bin/Debug/netcoreapp2.0/ParallelWorldAPI.pdb
-/Users/Lornestar/Documents/Bitcoin/ParallelWorld/ParallelWorldAPI/obj/Debug/netcoreapp2.0/ParallelWorldAPI.csprojResolveAssemblyReference.cache
 /Users/Lornestar/Documents/Bitcoin/ParallelWorld/ParallelWorldAPI/obj/Debug/netcoreapp2.0/ParallelWorldAPI.csproj.CoreCompileInputs.cache
 /Users/Lornestar/Documents/Bitcoin/ParallelWorld/ParallelWorldAPI/obj/Debug/netcoreapp2.0/ParallelWorldAPI.AssemblyInfoInputs.cache
 /Users/Lornestar/Documents/Bitcoin/ParallelWorld/ParallelWorldAPI/obj/Debug/netcoreapp2.0/ParallelWorldAPI.AssemblyInfo.cs

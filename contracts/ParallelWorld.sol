@@ -42,6 +42,7 @@ library SafeMath {
   }
 }
 
+
 contract ParallelWorld {
   using SafeMath for uint256;
 
@@ -52,6 +53,7 @@ contract ParallelWorld {
   event Approval(address indexed _owner, address indexed _approved, uint256 _tokenId);
 
   address private owner;
+  address public referraltokencontract;
   mapping (address => bool) private admins;
   IItemRegistry private itemRegistry;
   bool private erc721Enabled = false;
@@ -61,7 +63,7 @@ contract ParallelWorld {
   uint256 private increaseLimit3 = 2.0 ether;
   uint256 private increaseLimit4 = 5.0 ether;
 
-  uint256 public enddate = 1527552000;
+  uint256 public enddate = 1531673100; //World Cup Finals game end date/time
 
   uint256[] private listedItems;
   mapping (uint256 => address) private ownerOfItem;
@@ -73,8 +75,6 @@ contract ParallelWorld {
   mapping (address => bytes32) private ownerAlias;
   mapping (address => bytes32) private ownerEmail;
   mapping (address => bytes32) private ownerPhone;
-
-  uint256 public testuint256;
 
   function ParallelWorld () public {
     owner = msg.sender;
@@ -104,6 +104,10 @@ contract ParallelWorld {
 
   function getOwner() public view returns (address){
     return owner;
+  }
+
+  function setReferralTokenContract (address _referraltokencontract) onlyOwner() public {
+    referraltokencontract = _referraltokencontract;
   }
 
   function setItemRegistry (address _itemRegistry) onlyOwner() public {
@@ -137,19 +141,18 @@ contract ParallelWorld {
     owner.transfer(_amount);
   }*/
 
-  //award prize to winner, and developer takes 10%
+  //award prize to winner, and developer already took 10% from individual transactions
   function awardprize(uint256 _itemId) onlyOwner() public{
-    uint256 developeramount;
     uint256 winneramount;
 
-    developeramount = calculateDevCut(this.balance);
-    winneramount = this.balance - developeramount;
+    winneramount = this.balance;
 
-    //developer getting dev cut of prize amount
-    //owner.transfer(developeramount);
-
-    //winner gets the prize amount minus developer cut
-    ownerOf(_itemId).transfer(winneramount);
+    if (ownerOf(_itemId) != address(this))
+    {
+      //winner gets the prize amount minus developer cut
+      ownerOf(_itemId).transfer(winneramount);
+    }
+    
 
   }
 
@@ -176,9 +179,9 @@ contract ParallelWorld {
     listItem(_itemId, price, itemOwner, nameofItemlocal);
   }
 
-  function listMultipleItems (uint256[] _itemIds, uint256 _price, address _owner, bytes32[] _nameofItem) onlyAdmins() external {
+  function listMultipleItems (uint256[] _itemIds, uint256[] _price, address _owner, bytes32[] _nameofItem) onlyAdmins() external {
     for (uint256 i = 0; i < _itemIds.length; i++) {
-      listItem(_itemIds[i], _price, _owner, _nameofItem[i]);
+      listItem(_itemIds[i], _price[i], _owner, _nameofItem[i]);
     }
   }
 
@@ -262,16 +265,19 @@ contract ParallelWorld {
     // Transfer payment to old owner minus the cut for the final prize.  Don't transfer funds though if old owner is this contract
     if (oldOwner != address(this))
     {
-      //send to old owner
-      uint256 oldOwnercut = price.sub(pricedifference.mul(80).div(100));
+      //send to old owner,the original amount they paid, plus 20% of the price difference between what they paid and new owner pays
+      uint256 oldOwnercut = priceOfItem[_itemId].sub(pricedifference.mul(80).div(100));
       oldOwner.transfer(oldOwnercut);
+      
       //send to developer, 10% of price diff
       owner.transfer(calculateDevCut(pricedifference));
+    
     }
     else
     {
       //first transaction to purchase from contract, send 10% of tx to dev
       owner.transfer(calculateDevCut(msg.value));
+    
     }
 
     if (excess > 0) {
@@ -440,13 +446,7 @@ contract ParallelWorld {
     return size > 0;
   }
 
-  function settestuint256(uint256 _testuint256) public{
-    testuint256 = _testuint256;
-  }
-
-  function gettestuint256() public view returns(uint256){
-    return testuint256;
-  }
+  
 }
 
 interface IItemRegistry {

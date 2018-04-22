@@ -44,8 +44,15 @@ namespace ParallelWorldAPI
                 app.UseDeveloperExceptionPage();
             }
 
+           
             app.UseCors(
-                options => options.WithOrigins("http://localhost:3002").AllowAnyMethod()
+                options => options.WithOrigins("https://www.parallelworldcup.com").AllowAnyMethod().AllowAnyOrigin().AllowAnyHeader()
+            );
+            app.UseCors(
+                options => options.WithOrigins("https://www.oneowneronewinner.com").AllowAnyMethod().AllowAnyOrigin().AllowAnyHeader()
+            );
+            app.UseCors(
+                options => options.WithOrigins("http://localhost:3004").AllowAnyMethod().AllowAnyOrigin().AllowAnyHeader()
             );
 
             app.UseMvc();

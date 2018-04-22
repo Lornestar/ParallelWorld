@@ -1,0 +1,11 @@
+/Users/Lornestar/Documents/Bitcoin/ParallelWorld/ParallelWorldAPI/bin/Release/netcoreapp2.0/ParallelWorldAPI.deps.json
+/Users/Lornestar/Documents/Bitcoin/ParallelWorld/ParallelWorldAPI/bin/Release/netcoreapp2.0/ParallelWorldAPI.runtimeconfig.json
+/Users/Lornestar/Documents/Bitcoin/ParallelWorld/ParallelWorldAPI/bin/Release/netcoreapp2.0/ParallelWorldAPI.runtimeconfig.dev.json
+/Users/Lornestar/Documents/Bitcoin/ParallelWorld/ParallelWorldAPI/bin/Release/netcoreapp2.0/ParallelWorldAPI.dll
+/Users/Lornestar/Documents/Bitcoin/ParallelWorld/ParallelWorldAPI/bin/Release/netcoreapp2.0/ParallelWorldAPI.pdb
+/Users/Lornestar/Documents/Bitcoin/ParallelWorld/ParallelWorldAPI/obj/Release/netcoreapp2.0/ParallelWorldAPI.csprojResolveAssemblyReference.cache
+/Users/Lornestar/Documents/Bitcoin/ParallelWorld/ParallelWorldAPI/obj/Release/netcoreapp2.0/ParallelWorldAPI.csproj.CoreCompileInputs.cache
+/Users/Lornestar/Documents/Bitcoin/ParallelWorld/ParallelWorldAPI/obj/Release/netcoreapp2.0/ParallelWorldAPI.AssemblyInfoInputs.cache
+/Users/Lornestar/Documents/Bitcoin/ParallelWorld/ParallelWorldAPI/obj/Release/netcoreapp2.0/ParallelWorldAPI.AssemblyInfo.cs
+/Users/Lornestar/Documents/Bitcoin/ParallelWorld/ParallelWorldAPI/obj/Release/netcoreapp2.0/ParallelWorldAPI.dll
+/Users/Lornestar/Documents/Bitcoin/ParallelWorld/ParallelWorldAPI/obj/Release/netcoreapp2.0/ParallelWorldAPI.pdb

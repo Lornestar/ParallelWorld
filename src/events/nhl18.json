@@ -1,0 +1,146 @@
+[
+  {
+    "id": 0,
+    "name": "",
+    "picture": "../images/nhl18/predators.png",
+    "age": 0,
+    "odds": "10:1",
+    "location": "",
+    "status":true
+  },
+  {
+    "id": 1,
+    "name": "",
+    "picture": "../images/nhl18/avalanche.png",
+    "age": 0,
+    "odds": "10:1",
+    "location": "",
+    "status":true
+  },
+  {
+    "id": 2,
+    "name": "",
+    "picture": "../images/nhl18/jets.png",
+    "age": 0,
+    "odds": "10:1",
+    "location": "",
+    "status":true
+  },
+  {
+    "id": 3,
+    "name": "",
+    "picture": "../images/nhl18/wild.png",
+    "age": 0,
+    "odds": "10:1",
+    "location": "",
+    "status":true
+  },
+  {
+    "id": 4,
+    "name": "",
+    "picture": "../images/nhl18/knights.png",
+    "age": 0,
+    "odds": "10:1",
+    "location": "",
+    "status":true
+  },
+  {
+    "id": 5,
+    "name": "",
+    "picture": "../images/nhl18/kings.png",
+    "age": 0,
+    "breed": "",
+    "location": "",
+    "status":true
+  },
+  {
+    "id": 6,
+    "name": "",
+    "picture": "../images/nhl18/ducks.png",
+    "age": 0,
+    "breed": "",
+    "location": "",
+    "status":true
+  },
+  {
+    "id": 7,
+    "name": "",
+    "picture": "../images/nhl18/sharks.png",
+    "age": 0,
+    "breed": "",
+    "location": "",
+    "status":true
+  },
+  {
+    "id": 8,
+    "name": "",
+    "picture": "../images/nhl18/lightning.png",
+    "age": 0,
+    "breed": "",
+    "location": "",
+    "status":true
+  },
+  {
+    "id": 9,
+    "name": "",
+    "picture": "../images/nhl18/devils.png",
+    "age": 0,
+    "breed": "",
+    "location": "",
+    "status":true
+  },
+  {
+    "id": 10,
+    "name": "",
+    "picture": "../images/nhl18/bruins.png",
+    "age": 0,
+    "breed": "",
+    "location": "",
+    "status":true
+  },
+  {
+    "id": 11,
+    "name": "",
+    "picture": "../images/nhl18/leafs.png",
+    "age": 0,
+    "breed": "",
+    "location": "",
+    "status":true
+  },
+  {
+    "id": 12,
+    "name": "",
+    "picture": "../images/nhl18/capitals.png",
+    "age": 0,
+    "breed": "",
+    "location": "",
+    "status":true
+  },
+  {
+    "id": 13,
+    "name": "",
+    "picture": "../images/nhl18/jackets.png",
+    "age": 0,
+    "breed": "",
+    "location": "",
+    "status":true
+  },
+  {
+    "id": 14,
+    "name": "",
+    "picture": "../images/nhl18/penguins.png",
+    "age": 0,
+    "breed": "",
+    "location": "",
+    "status":true
+  },
+  {
+    "id": 15,
+    "name": "",
+    "picture": "../images/nhl18/flyers.png",
+    "age": 0,
+    "breed": "",
+    "location": "",
+    "status":true
+  }
+]

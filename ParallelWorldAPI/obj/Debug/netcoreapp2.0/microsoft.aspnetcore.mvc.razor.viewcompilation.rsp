@@ -1,5 +1,5 @@
-/Users/Lornestar/Projects/ParallelWorldAPI
+/Users/Lornestar/Documents/Bitcoin/ParallelWorld/ParallelWorldAPI
 --output-path=obj/Debug/netcoreapp2.0/
 --application-name=ParallelWorldAPI
---content-root=/Users/Lornestar/Projects/ParallelWorldAPI
+--content-root=/Users/Lornestar/Documents/Bitcoin/ParallelWorld/ParallelWorldAPI
 --file=

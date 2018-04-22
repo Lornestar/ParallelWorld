@@ -96,7 +96,7 @@ namespace ParallelWorldAPI.APIs
 
         public void AddTransaction(int tournamentid, string oldowner, string newowner, int itemid, decimal price, string txhash)
         {
-            string description = newowner + " just bought a team from you.";
+            string description = newowner + " just bought a team for " + price.ToString() + " ETH.";
 
             Hashtable hstemp2 = new Hashtable();
             hstemp2.Add("itemid", itemid);
@@ -106,11 +106,16 @@ namespace ParallelWorldAPI.APIs
             hstemp2.Add("price", price);
             hstemp2.Add("txhash", txhash);
 
+            int eventnumber = 0;
             string strresponse = Web_Request(baseendpoint + tournamentid.ToString() + "/events/.json", null, 0);
-            JArray ja = JArray.Parse(strresponse);
+            if (strresponse.Length > 0)
+            {
+                JArray ja = JArray.Parse(strresponse);
+                eventnumber = ja.Count;
+            }
 
             Hashtable hstemp = new Hashtable();
-            hstemp.Add(ja.Count, hstemp2);
+            hstemp.Add(eventnumber, hstemp2);
 
             Web_Request(baseendpoint + tournamentid.ToString() + "/events/.json", hstemp, 1);
         }

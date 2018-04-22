@@ -1,24 +1,25 @@
 ﻿<Properties StartupConfiguration="{8BB82D6B-FC36-4D27-B9C3-F6785534D266}|Default">
   <MonoDevelop.Ide.Workbench ActiveDocument="Controllers/TransactionController.cs">
     <Files>
-      <File FileName="Controllers/TransactionController.cs" Line="27" Column="18" />
-      <File FileName="APIs/firebase.cs" Line="94" Column="1" />
-      <File FileName="APIs/ethereumapi.cs" Line="37" Column="1" />
+      <File FileName="Controllers/TransactionController.cs" Line="94" Column="47" />
+      <File FileName="APIs/firebase.cs" Line="97" Column="113" />
+      <File FileName="APIs/ethereumapi.cs" Line="16" Column="82" />
       <File FileName="Controllers/AccountController.cs" Line="22" Column="54" />
       <File FileName="Models/Account.cs" Line="8" Column="42" />
       <File FileName="Controllers/ValuesController.cs" Line="16" Column="58" />
-      <File FileName="Startup.cs" Line="31" Column="57" />
-      <File FileName="APIs/sendgridapi.cs" Line="190" Column="1" />
+      <File FileName="Startup.cs" Line="20" Column="28" />
+      <File FileName="APIs/sendgridapi.cs" Line="189" Column="1" />
       <File FileName="../../Tutorials/nautilus-master_v2/Nautilus/Startup.cs" Line="26" Column="9" />
-      <File FileName="Models/Transaction.cs" Line="11" Column="9" />
+      <File FileName="Models/Transaction.cs" Line="11" Column="42" />
       <File FileName="../../Tutorials/nautilus-master_v2/Nautilus/Services/Background/Blockchain/IncomingEthTxService.cs" Line="45" Column="35" />
+      <File FileName="../../Bitcoin_Notify/Bitcoin_Notify/Bitcoin_Analyze/Default.aspx" Line="93" Column="18" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.ItemProperties.ParallelWorldAPI PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
-      <Breakpoint file="/Users/Lornestar/Documents/Bitcoin/ParallelWorld/ParallelWorldAPI/APIs/sendgridapi.cs" relfile="APIs/sendgridapi.cs" line="189" column="1" />
+      <Breakpoint file="/Users/Lornestar/Documents/Bitcoin/ParallelWorld/ParallelWorldAPI/Controllers/TransactionController.cs" relfile="Controllers/TransactionController.cs" line="92" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
