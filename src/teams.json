@@ -10,7 +10,7 @@
   },
   {
     "id": 1,
-    "name": "",
+    "name": "Saudia Arabia",
     "picture": "images/worldcup/saudi-arabia.png",
     "age": 0,
     "odds": "1000:1",
@@ -18,7 +18,7 @@
   },
   {
     "id": 2,
-    "name": "",
+    "name": "Egypt",
     "picture": "images/worldcup/egypt.png",
     "age": 0,
     "odds": "150:1",
@@ -26,7 +26,7 @@
   },
   {
     "id": 3,
-    "name": "",
+    "name": "Uruguay",
     "picture": "images/worldcup/uruguay.png",
     "age": 0,
     "odds": "25:1",
@@ -34,7 +34,7 @@
   },
   {
     "id": 4,
-    "name": "",
+    "name": "Portugal",
     "picture": "images/worldcup/portugal.png",
     "age": 0,
     "odds": "20:1",
@@ -42,7 +42,7 @@
   },
   {
     "id": 5,
-    "name": "",
+    "name": "Spain",
     "picture": "images/worldcup/spain.png",
     "age": 0,
     "odds": "7:1",
@@ -50,7 +50,7 @@
   },
   {
     "id": 6,
-    "name": "",
+    "name": "Morocco",
     "picture": "images/worldcup/morocco.png",
     "age": 0,
     "odds": "250:1",
@@ -58,7 +58,7 @@
   },
   {
     "id": 7,
-    "name": "",
+    "name": "Iran",
     "picture": "images/worldcup/iran.png",
     "age": 0,
     "odds": "250:1",
@@ -66,7 +66,7 @@
   },
   {
     "id": 8,
-    "name": "",
+    "name": "France",
     "picture": "images/worldcup/france.png",
     "age": 0,
     "odds": "5.5:1",
@@ -74,7 +74,7 @@
   },
   {
     "id": 9,
-    "name": "",
+    "name": "Australia",
     "picture": "images/worldcup/australia.png",
     "age": 0,
     "odds": "250:1",
@@ -82,7 +82,7 @@
   },
   {
     "id": 10,
-    "name": "",
+    "name": "Peru",
     "picture": "images/worldcup/peru.png",
     "age": 0,
     "odds": "200:1",
@@ -90,7 +90,7 @@
   },
   {
     "id": 11,
-    "name": "",
+    "name": "Denmark",
     "picture": "images/worldcup/denmark.png",
     "age": 0,
     "odds": "80:1",
@@ -98,7 +98,7 @@
   },
   {
     "id": 12,
-    "name": "",
+    "name": "Argentina",
     "picture": "images/worldcup/argentina.png",
     "age": 0,
     "odds": "8:1",
@@ -106,7 +106,7 @@
   },
   {
     "id": 13,
-    "name": "",
+    "name": "Iceland",
     "picture": "images/worldcup/iceland.png",
     "age": 0,
     "odds": "200:1",
@@ -114,7 +114,7 @@
   },
   {
     "id": 14,
-    "name": "",
+    "name": "Croatia",
     "picture": "images/worldcup/croatia.png",
     "age": 0,
     "odds": "30:1",
@@ -122,7 +122,7 @@
   },
   {
     "id": 15,
-    "name": "",
+    "name": "Nigeria",
     "picture": "images/worldcup/nigeria.png",
     "age": 0,
     "odds": "200:1",
@@ -130,7 +130,7 @@
   },
   {
     "id": 16,
-    "name": "",
+    "name": "Brazil",
     "picture": "images/worldcup/brazil.png",
     "age": 0,
     "odds": "5:1",
@@ -138,7 +138,7 @@
   },
   {
     "id": 17,
-    "name": "",
+    "name": "Switzerland",
     "picture": "images/worldcup/switzerland.png",
     "age": 0,
     "odds": "80:1",
@@ -146,7 +146,7 @@
   },
   {
     "id": 18,
-    "name": "",
+    "name": "Costa Rica",
     "picture": "images/worldcup/costa-rica.png",
     "age": 0,
     "odds": "250:1",
@@ -154,7 +154,7 @@
   },
   {
     "id": 19,
-    "name": "",
+    "name": "Serbia",
     "picture": "images/worldcup/serbia.png",
     "age": 0,
     "odds": "150:1",
@@ -162,7 +162,7 @@
   },
   {
     "id": 20,
-    "name": "",
+    "name": "Germany",
     "picture": "images/worldcup/germany.png",
     "age": 0,
     "odds": "4.5:1",
@@ -170,7 +170,7 @@
   },
   {
     "id": 21,
-    "name": "",
+    "name": "Mexico",
     "picture": "images/worldcup/mexico.png",
     "age": 0,
     "odds": "60:1",
@@ -178,7 +178,7 @@
   },
   {
     "id": 22,
-    "name": "",
+    "name": "Sweden",
     "picture": "images/worldcup/sweden.png",
     "age": 0,
     "odds": "80:1",
@@ -186,7 +186,7 @@
   },
   {
     "id": 23,
-    "name": "",
+    "name": "South Korea",
     "picture": "images/worldcup/south-korea.png",
     "age": 0,
     "odds": "500:1",
@@ -194,7 +194,7 @@
   },
   {
     "id": 24,
-    "name": "",
+    "name": "Belgium",
     "picture": "images/worldcup/belgium.png",
     "age": 0,
     "odds": "12:1",
@@ -202,7 +202,7 @@
   },
   {
     "id": 25,
-    "name": "",
+    "name": "Panama",
     "picture": "images/worldcup/panama.png",
     "age": 0,
     "odds": "1000:1",
@@ -211,7 +211,7 @@
   },
   {
     "id": 26,
-    "name": "",
+    "name": "Tunisia",
     "picture": "images/worldcup/tunisia.png",
     "age": 0,
     "odds": "500:1",
@@ -219,7 +219,7 @@
   },
   {
     "id": 27,
-    "name": "",
+    "name": "England",
     "picture": "images/worldcup/england.png",
     "age": 0,
     "odds": "20:1",
@@ -227,7 +227,7 @@
   },
   {
     "id": 28,
-    "name": "",
+    "name": "Poland",
     "picture": "images/worldcup/poland.png",
     "age": 0,
     "odds": "40:1",
@@ -235,7 +235,7 @@
   },
   {
     "id": 29,
-    "name": "",
+    "name": "Senegal",
     "picture": "images/worldcup/senegal.png",
     "age": 0,
     "odds": "150:1",
@@ -243,7 +243,7 @@
   },
   {
     "id": 30,
-    "name": "",
+    "name": "Colombia",
     "picture": "images/worldcup/colombia.png",
     "age": 0,
     "odds": "25:1",
@@ -251,7 +251,7 @@
   },
   {
     "id": 31,
-    "name": "",
+    "name": "Japan",
     "picture": "images/worldcup/japan.png",
     "age": 0,
     "odds": "150:1",

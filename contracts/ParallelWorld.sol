@@ -292,7 +292,7 @@ contract ParallelWorld {
   }
 
   function name() public pure returns (string _name) {
-    return "Parallel World";
+    return "Parallel World Cup";
   }
 
   function symbol() public pure returns (string _symbol) {

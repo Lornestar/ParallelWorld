@@ -36,5 +36,21 @@ namespace ParallelWorldAPI.APIs
             return currentprice;
         }
 
+        public async Task<decimal> Getcurrentpotsize()
+        {
+            decimal currentpotsize = 0;
+            var web3 = new Nethereum.Web3.Web3(ETH_NODE_URL);
+
+            var contract = web3.Eth.GetContract(abi, contractaddress);
+            var pricefunction = contract.GetFunction("getprizeamount");
+
+            var result = await pricefunction.CallAsync<BigInteger>();
+            Nethereum.Util.UnitConversion nethutil = new Nethereum.Util.UnitConversion();
+
+            currentpotsize = nethutil.FromWei(result, 18);
+
+            return currentpotsize;
+        }
+
     }
 }

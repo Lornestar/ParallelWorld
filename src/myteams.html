@@ -1,44 +1,61 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
+<head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
     <title>Parallel World Cup</title>
 
-    <!-- Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<script type='text/javascript' src='https://cdn.firebase.com/js/client/1.0.11/firebase.js'></script>
-    <script> 
-     $(function(){
-        $("#header").load("header.html"); 
-        $("#footer").load("footer.html"); 
-      });
-      </script> 
-  </head>
-  <body>
-    <div class="container">
+  <!-- Bootstrap -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script type='text/javascript' src='https://cdn.firebase.com/js/client/1.0.11/firebase.js'></script>
+  <script> 
+    $(function(){
+      $("#header").load("header.html"); 
+      $("#footer").load("footer.html"); 
+      $("#navigation").load("navigation.html");
+    });
+    </script>  
+    <script src="js/app.js"></script>
+    <script src="js/admininit.js"></script>      
+     
+</head>
+<body id="page-top">
+  <div id="navigation"></div>
+  
+  <section id="about">
+      <div class="container my-auto">
+    
+        <div id="header"></div>
 
-      <div id="header"></div>
+        <div class="col-xs-12 col-sm-8 col-sm-push-2">
+            <div class="row">
+                Your ETH Address: <span id='currentethaddress'></span>
+            </div>
+            <div class="row">
+                A nickname looks better than an ETH address<br/><br/><br/>
+                NICKNAME: <input type="text" id='nickname' class="form-control"><br>
+            </div>
+            <div class="row">
+                Get notified when someone buys a team away from you<br/><br/><br/>
+                EMAIL: <input type="text" id='email' class="form-control"><br><br/>
+                <button onclick="updateaccountinfo()">Submit</button><br>          
+            </div>          
+        </div>
+      </div>
 
-      <div>
-          Your ETH Address: <span id='currentethaddress'></span>
-          <br>
-          A nickname looks better than an ETH address<br>
-          Nickname: <input type="text" id='nickname'><br>
-          <br>
-          Get notified when someone buys a team away from you<br>
-          email: <input type="text" id='email'><br>
-          <button onclick="updateaccountinfo()">Submit</button><br>          
-        
-      </div>
-      <div id="petsRow" class="row">
-        <!-- PETS LOAD HERE -->
-      </div>
-    </div>
+      <div class="row">
+        <div class="col-xs-12 col-sm-8 col-sm-push-2">
+        The teams you currently own:
+              <div id="petsRow" >
+                <!-- PETS LOAD HERE -->
+              </div>        
+            </div>
+          </div>
+    </section>
 
     <div id="petTemplate" style="display: none;">
       <div class="col-md-3" style="min-height:580px;">

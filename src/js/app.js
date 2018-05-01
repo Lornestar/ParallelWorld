@@ -1,7 +1,5 @@
 var usersteams = [];
-var apibaseurl = "https://api.oneowneronewinner.com/api/"
-var petsRow = $('#petsRow');
-var petTemplate = $('#petTemplate');
+var apibaseurl = "https://api.parallelworldcup.com/api/"
 var pathname = window.location.pathname;
 var intprizeamount;
 
@@ -21,12 +19,7 @@ App = {
     }
     
     //setup countdown
-    var date = new Date(0); // The 0 there is the key, which sets the date to the epoch
-    date.setUTCSeconds(utcSeconds);
-
-    $('#countdown').countdown(date, function(event) {
-      $(this).html(event.strftime('%D days %H:%M:%S'));
-    });
+    setupcounter();
 
     return App.initWeb3();
   },
@@ -38,6 +31,7 @@ App = {
     } else {
       // If no injected web3 instance is detected, fall back to Ganache
       App.web3Provider = new Web3.providers.HttpProvider('http://localhost:8545');
+      $('#metamaskwarning').css("display", "block");
     }
     web3 = new Web3(App.web3Provider);
 
@@ -53,8 +47,12 @@ App = {
           console.log('This is local dev environment')
           break
         default:
-          document.getElementById("metamaskwarning").innerHTML = "***Please set metamask to Rinkeby Test Network***<br/><a href='https://metamask.io/'>Click here to get metamask</a><br/><a href='https://www.rinkeby.io/#faucet'>Click here to get free ETH on the Rinkeby testnet'</a>";
+          //document.getElementById("metamaskwarning").innerHTML = "***Please set metamask to Rinkeby Test Network***<br/><a href='https://metamask.io/'>Click here to get metamask</a><br/><a href='https://www.rinkeby.io/#faucet'>Click here to get free ETH on the Rinkeby testnet'</a>";
 
+      }
+      if (netId != "1")
+      {
+        $('#metamaskwarning').css("display", "block");
       }
     });
 
@@ -155,7 +153,7 @@ App = {
             var prizeamount = parseethamount(result);            
             intprizeamount = prizeamount;
             prizeamount = prizeamount + " ETH";
-            document.getElementById("prizeamount").innerHTML = "Prize amount = " + prizeamount;
+            document.getElementById("prizeamount").innerHTML = "Pot Size = " + prizeamount;
             document.getElementById("prizeamount").value = prizeamount;
             updateethconversion();
         });
@@ -314,11 +312,10 @@ App = {
 
 };
 
-$(function() {
-  $(window).load(function() {
+
+$(window).on('load', function(){
     App.init();    
   });
-});
 
 
 function parseethamount(amount)
@@ -376,6 +373,7 @@ function updateaccountinfo()
 
 function addteamtoscreen(i, data)
 {
+  var petTemplate = $('#petTemplate');
   petTemplate.find('.panel-title').text(data[i].name).attr('id','title_'+i);
         petTemplate.find('img').attr('src', data[i].picture);
         petTemplate.find('.pet-odds').text(data[i].odds);
@@ -400,13 +398,15 @@ function addteamtoscreen(i, data)
           //team is in, communicate that
           var buttonpanel = petTemplate.find('.btn-buyteam');
           buttonpanel.text('Buy Team');
-          buttonpanel.attr('style','background-color:white');
+          buttonpanel.attr('style','background-color:lightgray');
           buttonpanel.removeAttr("disabled"); 
         }
         //var testdom = petTemplate.find('.pet-title');
         //testdom.attr('id',"title_"+i);
 
-        petsRow.append(petTemplate.html());
+        //petsRow.append(petTemplate.html());
+        var test = petTemplate.html();
+        $('#petsRow').append(petTemplate.html());
 }
 
 function updateethconversion()
@@ -423,4 +423,13 @@ function updateethconversion()
         $('#ethusdprice').text("($" + priceinusd + " USD)");
       }
   });
+}
+
+function setupcounter(){
+  var date = new Date(0); // The 0 there is the key, which sets the date to the epoch
+    date.setUTCSeconds(utcSeconds);
+
+    $('#countdown').countdown(date, function(event) {
+      $(this).html(event.strftime('%D days %H:%M:%S'));
+    });
 }

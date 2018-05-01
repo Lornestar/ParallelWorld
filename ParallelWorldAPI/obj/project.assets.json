@@ -13065,13 +13065,13 @@
       "projectName": "ParallelWorldAPI",
       "projectPath": "/Users/Lornestar/Documents/Bitcoin/ParallelWorld/ParallelWorldAPI/ParallelWorldAPI.csproj",
       "packagesPath": "/Users/Lornestar/.nuget/packages/",
-      "outputPath": "/Users/Lornestar/Documents/Bitcoin/ParallelWorld/ParallelWorldAPI/obj",
+      "outputPath": "/Users/Lornestar/Documents/Bitcoin/ParallelWorld/ParallelWorldAPI/obj/",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "/Users/Lornestar/.config/NuGet/NuGet.Config"
+        "/Users/Lornestar/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.0"
@@ -13093,31 +13093,30 @@
     "frameworks": {
       "netcoreapp2.0": {
         "dependencies": {
-          "Microsoft.NETCore.App": {
-            "suppressParent": "All",
+          "Microsoft.AspNet.WebApi.Cors": {
             "target": "Package",
-            "version": "2.0",
-            "autoReferenced": true
+            "version": "[5.2.4, )"
           },
           "Microsoft.AspNetCore.All": {
             "target": "Package",
-            "version": "2.0.0"
+            "version": "[2.0.0, )"
           },
-          "Sendgrid": {
+          "Microsoft.NETCore.App": {
             "target": "Package",
-            "version": "9.9.0"
-          },
-          "SendGrid.SmtpApi": {
-            "target": "Package",
-            "version": "1.3.3"
+            "version": "[2.0.0, )",
+            "autoReferenced": true
           },
           "Nethereum.Web3": {
             "target": "Package",
-            "version": "2.4.0"
+            "version": "[2.4.0, )"
           },
-          "Microsoft.AspNet.WebApi.Cors": {
+          "SendGrid.SmtpApi": {
             "target": "Package",
-            "version": "5.2.4"
+            "version": "[1.3.3, )"
+          },
+          "Sendgrid": {
+            "target": "Package",
+            "version": "[9.9.0, )"
           }
         },
         "imports": [

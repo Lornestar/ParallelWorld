@@ -13,6 +13,7 @@
       <File FileName="Models/Transaction.cs" Line="11" Column="42" />
       <File FileName="../../Tutorials/nautilus-master_v2/Nautilus/Services/Background/Blockchain/IncomingEthTxService.cs" Line="45" Column="35" />
       <File FileName="../../Bitcoin_Notify/Bitcoin_Notify/Bitcoin_Analyze/Default.aspx" Line="93" Column="18" />
+      <File FileName="Controllers/SmartContractController.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />

@@ -30,3 +30,4 @@
 /Users/Lornestar/Documents/Bitcoin/ParallelWorld/ParallelWorldAPI/obj/Debug/netcoreapp2.0/ParallelWorldAPI.AssemblyInfo.cs
 /Users/Lornestar/Documents/Bitcoin/ParallelWorld/ParallelWorldAPI/obj/Debug/netcoreapp2.0/ParallelWorldAPI.dll
 /Users/Lornestar/Documents/Bitcoin/ParallelWorld/ParallelWorldAPI/obj/Debug/netcoreapp2.0/ParallelWorldAPI.pdb
+/Users/Lornestar/Documents/Bitcoin/ParallelWorld/ParallelWorldAPI/obj/Debug/netcoreapp2.0/ParallelWorldAPI.csprojResolveAssemblyReference.cache
