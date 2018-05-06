@@ -28,3 +28,13 @@
 
     checkthefirebase();
   </script>
+
+<script type="text/javascript">
+function runopensocialshare(){
+  var shareWidget = new OpenSocialShare();shareWidget.init({isHorizontalLayout: 1,widgetIconSize: "32",widgetStyle: "square",theme: 'OpenSocialShareDefaultTheme',providers: { top: ["Facebook","LinkedIn","Twitter"]}});shareWidget.injectInterface(".oss-widget-interface");shareWidget.setWidgetTheme(".oss-widget-interface");
+}
+
+$(window).on('load', function(){
+    runopensocialshare();
+  });
+</script>

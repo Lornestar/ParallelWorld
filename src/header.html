@@ -2,6 +2,7 @@
 <!-- Bootstrap core CSS -->
 <link href="js/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     
+<link href="https://fonts.googleapis.com/css?family=Anton|Signika" rel="stylesheet">
 
 <!-- Plugin CSS -->
 <link href="js/magnific-popup/magnific-popup.css" rel="stylesheet">
@@ -16,6 +17,9 @@
 
 <link href="css/accordion.min.css" rel="stylesheet">
 
+<script type="text/javascript" src="js/opensocialshare.js"></script>
+<script type="text/javascript" src="js/opensocialsharedefaulttheme.js"></script>
+<link rel="stylesheet" type="text/css" href="css/os-share-widget-style.css"/>
 
 
 
@@ -24,10 +28,20 @@
     <div class="col-xs-12 col-sm-8 col-sm-push-2">
       <h2 id=metamaskwarning style="display: none;"><div class="alert alert-danger" role="alert">
           You cannot see the pot size or own a team until you install Metamask.<br> <a href="index.html#services">Click here to learn more</a>
-        </div> </h2>          
-      <h3 ><span id=prizeamount></span> <span id=ethusdprice></span></h3> 
-      <input type="hidden" value="0" name="hdprizeamount">
-      <h5>Whoever owns the winning team at the end of the tournament gets the prize</h5>
-      <h3>Team buying ends in: <span id='countdown'></span></h3>
+        </div> 
+      </h2>
+        
+        <div class="col-lg-12 mx-auto" style="color: black;">
+            <p class="mb-5"><h2> Team buying ends in:
+                <span id='countdown'></span> </h2>
+            </p>
+            <h2>
+                <span id=prizeamount></span> <span id=ethusdprice></span>
+                <br>Want the Pot Size to grow? Share with your friends <div class='oss-widget-interface'></div>
+            </h2>
+        </div>  
     </div>
   </div>
+
+
+

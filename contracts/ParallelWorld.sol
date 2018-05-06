@@ -127,19 +127,6 @@ contract ParallelWorld {
     erc721Enabled = true;
   }
 
-  /* Withdraw */
-  /*
-    NOTICE: These functions withdraw the developer's cut which is left
-    in the contract by `buy`. User funds are immediately sent to the old
-    owner in `buy`, no user funds are left in the contract.
-  */
-  /*function withdrawAll () onlyOwner() public {
-    owner.transfer(this.balance);
-  }
-
-  function withdrawAmount (uint256 _amount) onlyOwner() public {
-    owner.transfer(_amount);
-  }*/
 
   //award prize to winner, and developer already took 10% from individual transactions
   function awardprize(uint256 _itemId) onlyOwner() public{
@@ -236,12 +223,7 @@ contract ParallelWorld {
     return _price.mul(10).div(100); //10%
   }
 
-  /*
-     Buy a country directly from the contract for the calculated price
-     which ensures that the owner gets a profit.  All countries that
-     have been listed can be bought by this method. User funds are sent
-     directly to the previous owner and are never stored in the contract.
-  */
+
   function buy (uint256 _itemId) payable public {
     require(priceOf(_itemId) > 0);
     require(ownerOf(_itemId) != address(0));
@@ -249,7 +231,7 @@ contract ParallelWorld {
     require(ownerOf(_itemId) != msg.sender);
     require(!isContract(msg.sender));
     require(msg.sender != address(0));
-    require(now < enddate); //team buying can only happen before April 2nd 00:00:00 UTC time
+    require(now < enddate); //team buying can only happen before end date
 
     address oldOwner = ownerOf(_itemId);
     address newOwner = msg.sender;
@@ -257,7 +239,7 @@ contract ParallelWorld {
     
     _transfer(oldOwner, newOwner, _itemId);
     priceOfItem[_itemId] = nextPriceOf(_itemId);
-    uint256 pricedifference = priceOfItem[_itemId].sub(price);
+    
     uint256 excess = msg.value.sub(priceOfItem[_itemId]);
 
     TransactionOccured(_itemId, priceOfItem[_itemId], oldOwner, newOwner);
@@ -265,6 +247,7 @@ contract ParallelWorld {
     // Transfer payment to old owner minus the cut for the final prize.  Don't transfer funds though if old owner is this contract
     if (oldOwner != address(this))
     {
+      uint256 pricedifference = priceOfItem[_itemId].sub(price);
       //send to old owner,the original amount they paid, plus 20% of the price difference between what they paid and new owner pays
       uint256 oldOwnercut = priceOfItem[_itemId].sub(pricedifference.mul(80).div(100));
       oldOwner.transfer(oldOwnercut);

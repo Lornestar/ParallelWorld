@@ -2,6 +2,7 @@ var usersteams = [];
 var apibaseurl = "https://api.parallelworldcup.com/api/"
 var pathname = window.location.pathname;
 var intprizeamount;
+var teamnextprices = [];
 
 App = {
   web3Provider: null,
@@ -83,7 +84,7 @@ App = {
 
   bindEvents: function() {
     //$(document).on('click', '.btn-adopt', App.handleAdopt);
-    $(document).on('click', '.btn-buyteam', App.handlebuy);    
+    $(document).on('click', '.btn-primary', App.handlebuy);    
   },
 
   handleuserinfo: function(){
@@ -123,6 +124,8 @@ App = {
         buyamount.replace(" ETH","");
         var buyamountfloat = parseFloat(buyamount);     
         buyamountfloat = buyamountfloat * 1e18;   
+        buyamountfloat = Math.ceil(buyamountfloat);
+        buyamountfloat = teamnextprices[teamId];
         return parallelworldInstance.buy(teamId, {value:buyamountfloat, from: account, gas: 21e4}).then(function(){
             App.handleiteminfo();
         });
@@ -169,6 +172,7 @@ App = {
             var itemname = web3.toAscii(specificiteminfo[5]); //column 5
             var currentowner = specificiteminfo[1];
 
+            teamnextprices[currentindex] = nextpriceamount;
 
             nextpriceamount = parseethamount(nextpriceamount);              
             var intnextpriceamount = nextpriceamount;
@@ -314,7 +318,7 @@ App = {
 
 
 $(window).on('load', function(){
-    App.init();    
+    App.init();        
   });
 
 
@@ -379,7 +383,7 @@ function addteamtoscreen(i, data)
         petTemplate.find('.pet-odds').text(data[i].odds);
         petTemplate.find('.pet-price').text(data[i].age);
         petTemplate.find('.pet-owner').text(data[i].location);
-        petTemplate.find('.btn-buyteam').attr('data-id', data[i].id);
+        petTemplate.find('.btn-primary').attr('data-id', data[i].id);
         
         petTemplate.find('.pet-oddsyouget').attr('id',"oddsyouget_"+i);
         petTemplate.find('.pet-price').attr('id',"nextprice_"+i);
@@ -390,15 +394,14 @@ function addteamtoscreen(i, data)
         if (teamstatus == false)
         {
           //team is out, communicate that
-          var buttonpanel = petTemplate.find('.btn-buyteam');
+          var buttonpanel = petTemplate.find('.btn-primary');
           buttonpanel.text('Team Out');
           buttonpanel.attr('style','background-color:red').attr('disabled','true');          
         }
         else{
           //team is in, communicate that
-          var buttonpanel = petTemplate.find('.btn-buyteam');
+          var buttonpanel = petTemplate.find('.btn-primary');
           buttonpanel.text('Buy Team');
-          buttonpanel.attr('style','background-color:lightgray');
           buttonpanel.removeAttr("disabled"); 
         }
         //var testdom = petTemplate.find('.pet-title');

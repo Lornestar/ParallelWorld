@@ -39,11 +39,28 @@ h6 {
 }
 
 .bg-primary {
-  background-color: #F05F40 !important;
+  background-color: #ffffff !important;
+  color: #34495e;
 }
 
 .bg-dark {
   background-color: #212529 !important;
+}
+
+.learnmore-subheader{
+  font-family: Anton;
+  font-size: 24px;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #34495e;
+}
+
+.learnmore-icon{
+    width: 78px;
+    height: 100px;
+    object-fit: contain;  
 }
 
 .text-faded {
@@ -58,6 +75,12 @@ section {
   margin-top: 0;
 }
 
+.soccerball {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+}
+
 ::-moz-selection {
   color: #fff;
   background: #212529;
@@ -65,7 +88,7 @@ section {
 }
 
 ::selection {
-  color: #fff;
+  /* color: #fff; */
   background: #212529;
   text-shadow: none;
 }
@@ -90,10 +113,16 @@ img::-moz-selection {
 }
 
 #mainNav .navbar-brand {
-  font-weight: 700;
-  text-transform: uppercase;
-  color: #F05F40;
-  font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+  height: 20px;
+  font-family: Signika;
+  font-size: 16px;
+  font-weight: 600;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #ffffff;
 }
 
 #mainNav .navbar-brand:focus, #mainNav .navbar-brand:hover {
@@ -101,11 +130,16 @@ img::-moz-selection {
 }
 
 #mainNav .navbar-nav > li.nav-item > a.nav-link,
-#mainNav .navbar-nav > li.nav-item > a.nav-link:focus {
-  /*font-size: .9rem;*/
-  font-weight: 700;
-  text-transform: uppercase;
-  color: #212529;
+#mainNav .navbar-nav > li.nav-item > a.nav-link:focus {  
+  font-family: Signika;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+  color: #ffffff;
 }
 
 #mainNav .navbar-nav > li.nav-item > a.nav-link:hover,
@@ -148,28 +182,28 @@ img::-moz-selection {
   }
   #mainNav.navbar-shrink {
     border-bottom: 1px solid rgba(33, 37, 41, 0.1);
-    background-color: #fff;
+    background-color: #34495e;
   }
   #mainNav.navbar-shrink .navbar-brand {
-    color: #F05F40;
+    color: #ffffff;
   }
   #mainNav.navbar-shrink .navbar-brand:focus, #mainNav.navbar-shrink .navbar-brand:hover {
-    color: #f05f40;
+    color: #ffffff;
   }
   #mainNav.navbar-shrink .navbar-nav > li.nav-item > a.nav-link,
   #mainNav.navbar-shrink .navbar-nav > li.nav-item > a.nav-link:focus {
-    color: #212529;
+    /* color: #212529; */
   }
   #mainNav.navbar-shrink .navbar-nav > li.nav-item > a.nav-link:hover,
   #mainNav.navbar-shrink .navbar-nav > li.nav-item > a.nav-link:focus:hover {
-    color: #F05F40;
+    color: #ffffff;
   }
 }
 
 header.masthead {
   padding-top: 10rem;
   padding-bottom: calc(10rem - 56px);
-  background-image: url("../imgages/header.jpg");
+  background-image: url("../images/header.png");
   background-position: center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -183,7 +217,7 @@ header.masthead hr {
 }
 
 header.masthead h1 {
-  font-size: 2rem;
+  font-size: 1;
 }
 
 header.masthead p {
@@ -210,7 +244,7 @@ header.masthead p {
 
 @media (min-width: 1200px) {
   header.masthead h1 {
-    font-size: 4rem;
+    font-size: 3.4rem;
   }
 }
 
@@ -286,11 +320,15 @@ header.masthead p {
 }
 
 .btn {
-  font-weight: 700;
-  text-transform: uppercase;
-  border: none;
-  border-radius: 300px;
-  font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+  font-family: Signika;
+  font-size: 16px;
+  font-weight: 600;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+  color: #ffffff;
 }
 
 .btn-xl {
@@ -298,13 +336,23 @@ header.masthead p {
 }
 
 .btn-primary {
-  background-color: #F05F40;
-  border-color: #F05F40;
+  width: 169px;
+  height: 50px;
+  border-radius: 28px;
+}
+
+.btn-primary-light{
+  border: solid 1px #ffffff;
+}
+
+.btn-primary-dark{
+  background-color: #ffffff;
+  color: #34495e;
 }
 
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active {
   color: #fff;
-  background-color: #ee4b28 !important;
+  background-color: #34495e !important;
 }
 
 .btn-primary:active, .btn-primary:focus {
@@ -321,4 +369,34 @@ header.masthead p {
   .trashtalk{
     display: none;
   }
+}
+
+
+.pet-owner{
+  text-decoration: none; 
+    text-overflow: ellipsis; 
+    display: block; 
+    overflow: hidden; 
+    white-space: nowrap;
+    width: 200px; 
+}
+
+.pet-theypaid{
+  float: right;
+}
+
+.pet-price{
+  float: right;
+}
+
+.pet-oddsyouget{
+  float: right;
+}
+
+.pet-odds{
+  float: right;
+}
+
+.btn-buyteam{
+  background-color: #34495e;
 }
