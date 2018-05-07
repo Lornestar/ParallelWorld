@@ -24,7 +24,6 @@ Appinit = {
         var itemlistnames1 = ["Russia", "Saudi Arabia", "Egypt", "Uruguay", "Portugal", "Spain", "Morocco", "Iran", "France", "Australia", "Peru", "Denmark", "Argentina", "Iceland", "Croatia", "Nigeria"];
         var itemlistnames2 = ["Brazil", "Switzerland", "Costa Rica", "Serbia", "Germany", "Mexico", "Sweden", "Korea Republic", "Belgium", "Panama", "Tunisia", "England", "Poland", "Senegal", "Colombia", "Japan"];
         var itemlistprice1 = [333e14, 1e15, 666e13, 4e16, 5e16, 14e16, 4e15, 4e15, 18e16, 4e15, 5e15, 125e14, 125e15, 5e15, 333e14, 5e15];        
-        //var itemlistprice1 = [1e15, 1e15, 666e13, 4e16, 5e16, 14e16, 4e15, 4e15, 18e16, 4e15, 5e15, 125e14, 125e15, 5e15, 333e14, 5e15];        
         var itemlistprice2 = [2e17, 125e14, 4e15, 666e13, 222e15, 166e14, 125e14, 2e15, 833e14, 1e15, 2e15, 5e16, 25e15, 666e13, 4e16, 666e13];
 
         parallelworldInstance.setItemRegistry(web3.eth.accounts[0], {value:0, from:web3.eth.accounts[0], gas:21e5, gasPrice:29e9});
